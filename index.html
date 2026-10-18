@@ -3,27 +3,28 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>cash denomination calculator</title>
+    <!-- Optimized High-CTR & Front-Loaded Keyword Title -->
+    <title>Cash Denomination Calculator: Fast Bill &amp; Coin Counter (Instant Deposit Slip)</title>
     <meta name="description" content="Free Cash Denomination Calculator & Currency Counter. Calculate banknote totals, coins, amount in words, cash breakdown for bank deposits, payroll envelopes, and till reconciliation. Supports USD, EUR, GBP, SAR, AED, EGP, and INR.">
     <meta name="keywords" content="cash denomination calculator, money counter calculator, currency breakdown calculator, bank deposit slip calculator, cash tally counter, bill counter online, till reconciliation tool">
-    <meta name="author" content="cash denomination calculator">
+    <meta name="author" content="DenomiCalc Pro">
     <link rel="canonical" href="https://yourdomain.com//">
     <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>💵</text></svg>">
     
-    <!-- Open Graph / Social SEO -->
+    <!-- Open Graph / Social Media -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://yourdomain.com/">
-    <meta property="og:title" content="cash denomination calculator">
-    <meta property="og:description" content="Calculate bill totals, coin counts, optimal breakdown for payouts, and print bank deposit slips in seconds. Multi-currency and 100% private.">
+    <meta property="og:title" content="Cash Denomination Calculator: Fast Bill &amp; Coin Counter">
+    <meta property="og:description" content="Instant bill counter, coin breakdown, amount-in-words generator, and printable bank deposit slip. 100% private, client-side calculator.">
     
-    <!-- JSON-LD Structured Data: SoftwareApplication + FAQ + HowTo -->
+    <!-- Structured Data (SoftwareApplication + HowTo + FAQPage) -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
       "@graph": [
         {
           "@type": "SoftwareApplication",
-          "name": "cash denomination calculator",
+          "name": "Cash Denomination Calculator",
           "operatingSystem": "All",
           "applicationCategory": "BusinessApplication",
           "offers": {
@@ -36,7 +37,7 @@
             "ratingValue": "4.9",
             "ratingCount": "1280"
           },
-          "description": "Professional web-based cash denomination calculator and money counter for cashiers, tellers, retail store managers, and accountants."
+          "description": "Professional cash denomination calculator and money counter for cashiers, bank tellers, and accountants."
         },
         {
           "@type": "HowTo",
@@ -100,15 +101,15 @@
     <style>
         :root {
             --primary: #1e3a8a;
-            --primary-hover: #1e40af;
-            --secondary: #059669;
-            --secondary-hover: #047857;
-            --accent: #f59e0b;
+            --primary-hover: #172554;
+            --secondary: #065f46; /* High contrast: 7.4:1 ratio on white */
+            --secondary-hover: #044e3b;
+            --accent: #b45309;
             --bg-main: #f8fafc;
             --bg-card: #ffffff;
             --text-dark: #0f172a;
-            --text-muted: #475569;
-            --border: #e2e8f0;
+            --text-muted: #334155; /* Meets WCAG AAA 7:1 ratio */
+            --border: #cbd5e1;
             --shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.05), 0 4px 6px -2px rgba(0, 0, 0, 0.03);
             --radius: 12px;
         }
@@ -121,13 +122,13 @@
         .nav-container { max-width: 1200px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; padding: 14px 20px; }
         .logo { font-size: 1.35rem; font-weight: 800; color: var(--primary); text-decoration: none; display: flex; align-items: center; gap: 8px; }
         .nav-links { display: flex; gap: 20px; }
-        .nav-links a { text-decoration: none; color: var(--text-muted); font-weight: 600; font-size: 0.95rem; transition: color 0.2s; }
-        .nav-links a:hover, .nav-links a.active { color: var(--primary); }
+        .nav-links a { text-decoration: none; color: var(--text-muted); font-weight: 700; font-size: 0.95rem; transition: color 0.2s; }
+        .nav-links a:hover, .nav-links a.active { color: var(--primary); text-decoration: underline; }
 
         /* Hero */
         .hero { max-width: 1200px; margin: 40px auto 25px; padding: 0 20px; text-align: center; }
-        .hero h1 { font-size: 2.5rem; color: var(--text-dark); margin-bottom: 12px; font-weight: 800; }
-        .hero p { color: var(--text-muted); font-size: 1.15rem; max-width: 750px; margin: 0 auto; }
+        .hero h1 { font-size: 2.4rem; color: var(--text-dark); margin-bottom: 12px; font-weight: 800; }
+        .hero p { color: var(--text-muted); font-size: 1.15rem; max-width: 760px; margin: 0 auto; font-weight: 500; }
 
         /* Calculator App Container */
         .app-container { max-width: 1200px; margin: 0 auto 50px; padding: 0 20px; display: grid; grid-template-columns: 1fr 380px; gap: 30px; }
@@ -135,83 +136,85 @@
 
         .card { background: var(--bg-card); border-radius: var(--radius); border: 1px solid var(--border); box-shadow: var(--shadow); padding: 25px; }
 
-        /* Mode Selector Tabs */
-        .tab-group { display: flex; background: #e2e8f0; border-radius: 8px; padding: 4px; margin-bottom: 20px; gap: 4px; }
-        .tab-btn { flex: 1; border: none; background: transparent; padding: 10px 16px; border-radius: 6px; font-weight: 700; cursor: pointer; color: var(--text-muted); transition: all 0.2s; font-size: 0.95rem; }
-        .tab-btn.active { background: #ffffff; color: var(--primary); box-shadow: 0 2px 4px rgba(0,0,0,0.06); }
+        /* ARIA Tablist Fixes */
+        .tab-group { display: flex; background: #e2e8f0; border-radius: 8px; padding: 5px; margin-bottom: 20px; gap: 6px; }
+        .tab-btn { flex: 1; border: none; background: transparent; padding: 12px 16px; border-radius: 6px; font-weight: 700; cursor: pointer; color: #1e293b; transition: all 0.2s; font-size: 0.95rem; }
+        .tab-btn[aria-selected="true"] { background: #ffffff; color: var(--primary); box-shadow: 0 2px 5px rgba(0,0,0,0.1); }
+        .tab-btn:focus-visible { outline: 2px solid var(--primary); outline-offset: 2px; }
 
         /* Config Bar */
         .toolbar { display: flex; justify-content: space-between; align-items: center; gap: 15px; margin-bottom: 20px; flex-wrap: wrap; }
-        .currency-select-wrapper { display: flex; align-items: center; gap: 8px; }
-        .currency-select { padding: 9px 14px; border: 1.5px solid var(--border); border-radius: 8px; font-size: 0.95rem; font-weight: 600; color: var(--text-dark); outline: none; background: #fff; cursor: pointer; }
+        .currency-select-wrapper { display: flex; align-items: center; gap: 10px; }
+        .currency-select { padding: 10px 14px; border: 2px solid var(--border); border-radius: 8px; font-size: 0.95rem; font-weight: 700; color: var(--text-dark); outline: none; background: #fff; cursor: pointer; }
         .currency-select:focus { border-color: var(--primary); }
 
-        .btn { padding: 9px 16px; border: none; border-radius: 8px; font-size: 0.9rem; font-weight: 600; cursor: pointer; transition: 0.2s; display: inline-flex; align-items: center; gap: 6px; }
-        .btn-outline { background: transparent; border: 1.5px solid var(--border); color: var(--text-muted); }
-        .btn-outline:hover { background: #f1f5f9; color: var(--text-dark); }
-        .btn-success { background: var(--secondary); color: white; }
+        /* High Contrast Buttons */
+        .btn { padding: 11px 18px; border: none; border-radius: 8px; font-size: 0.95rem; font-weight: 700; cursor: pointer; transition: 0.2s; display: inline-flex; align-items: center; justify-content: center; gap: 8px; }
+        .btn-outline { background: #ffffff; border: 2px solid var(--border); color: #0f172a; }
+        .btn-outline:hover { background: #f1f5f9; border-color: #94a3b8; }
+        .btn-success { background: var(--secondary); color: #ffffff; } /* WCAG AAA Passed */
         .btn-success:hover { background: var(--secondary-hover); }
-        .btn-primary { background: var(--primary); color: white; }
+        .btn-primary { background: var(--primary); color: #ffffff; }
         .btn-primary:hover { background: var(--primary-hover); }
 
-        /* Table of Denominations */
+        /* Denomination Grid */
         .denomination-grid { display: flex; flex-direction: column; gap: 10px; }
-        .denom-row { display: grid; grid-template-columns: 140px 1fr 140px; align-items: center; gap: 15px; padding: 10px 14px; border-radius: 8px; background: #f8fafc; border: 1px solid #f1f5f9; }
-        .denom-badge { font-weight: 700; font-size: 1.05rem; color: var(--primary); display: flex; align-items: center; gap: 6px; }
+        .denom-row { display: grid; grid-template-columns: 140px 1fr 140px; align-items: center; gap: 15px; padding: 12px 16px; border-radius: 8px; background: #f8fafc; border: 1px solid var(--border); }
+        .denom-badge { font-weight: 800; font-size: 1.05rem; color: var(--primary); display: flex; align-items: center; gap: 6px; cursor: pointer; }
         .denom-input-wrap { position: relative; }
-        .denom-input { width: 100%; padding: 8px 12px; border: 1.5px solid var(--border); border-radius: 6px; font-size: 1rem; font-weight: 600; text-align: center; outline: none; }
+        .denom-input { width: 100%; padding: 10px 14px; border: 2px solid var(--border); border-radius: 6px; font-size: 1.05rem; font-weight: 700; text-align: center; outline: none; color: #0f172a; }
         .denom-input:focus { border-color: var(--primary); background: #ffffff; }
-        .denom-subtotal { text-align: right; font-weight: 700; font-size: 1rem; color: var(--text-dark); }
+        .denom-subtotal { text-align: right; font-weight: 800; font-size: 1.05rem; color: #0f172a; }
 
-        /* Sticky Summary Sidebar */
+        /* Summary Sidebar */
         .summary-card { position: sticky; top: 90px; display: flex; flex-direction: column; gap: 20px; }
         .summary-header { border-bottom: 2px dashed var(--border); padding-bottom: 15px; }
-        .summary-header span { font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.05em; font-weight: 700; color: var(--text-muted); }
+        .summary-header span { font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.05em; font-weight: 800; color: #334155; }
         .grand-total-display { font-size: 2.3rem; font-weight: 900; color: var(--primary); line-height: 1.1; margin-top: 5px; }
         .stats-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
-        .stat-box { background: #f1f5f9; padding: 12px; border-radius: 8px; }
-        .stat-box small { font-size: 0.75rem; color: var(--text-muted); display: block; font-weight: 600; text-transform: uppercase; }
-        .stat-box strong { font-size: 1.15rem; color: var(--text-dark); }
+        .stat-box { background: #f1f5f9; padding: 12px; border-radius: 8px; border: 1px solid #e2e8f0; }
+        .stat-box small { font-size: 0.8rem; color: #334155; display: block; font-weight: 700; text-transform: uppercase; }
+        .stat-box strong { font-size: 1.25rem; color: #0f172a; font-weight: 800; }
 
-        .words-container { background: #ecfdf5; border: 1px solid #a7f3d0; border-radius: 8px; padding: 12px; font-size: 0.9rem; color: #065f46; font-style: italic; }
-        .words-title { font-weight: 700; font-style: normal; margin-bottom: 4px; display: block; font-size: 0.8rem; text-transform: uppercase; }
+        /* High-Contrast Words Container */
+        .words-container { background: #ecfdf5; border: 1.5px solid #059669; border-radius: 8px; padding: 14px; font-size: 0.95rem; color: #064e3b; font-weight: 600; }
+        .words-title { font-weight: 800; margin-bottom: 4px; display: block; font-size: 0.85rem; text-transform: uppercase; color: #065f46; }
 
-        .action-btns { display: flex; flex-direction: column; gap: 10px; }
+        .action-btns { display: flex; flex-direction: column; gap: 12px; }
 
-        /* Reverse Breakdown Section */
-        #breakdownMode { display: none; }
+        /* Breakdown Mode */
         .reverse-input-wrap { margin-bottom: 20px; }
-        .reverse-input-wrap label { font-weight: 700; display: block; margin-bottom: 8px; }
-        .reverse-big-input { width: 100%; padding: 14px 18px; border: 2px solid var(--border); border-radius: 8px; font-size: 1.5rem; font-weight: 800; color: var(--primary); outline: none; }
+        .reverse-input-wrap label { font-weight: 800; display: block; margin-bottom: 8px; font-size: 1.05rem; }
+        .reverse-big-input { width: 100%; padding: 14px 18px; border: 2.5px solid var(--border); border-radius: 8px; font-size: 1.5rem; font-weight: 800; color: var(--primary); outline: none; }
         .reverse-big-input:focus { border-color: var(--primary); }
 
-        /* Rich Content & Long Form Article */
+        /* Long Form Article Content */
         .content-section { max-width: 1000px; margin: 40px auto 80px; padding: 0 20px; }
         .article-card { background: #ffffff; border-radius: var(--radius); border: 1px solid var(--border); padding: 40px; box-shadow: var(--shadow); }
-        .article-card h2 { font-size: 1.85rem; color: var(--primary); margin: 35px 0 16px; }
+        .article-card h2 { font-size: 1.85rem; color: var(--primary); margin: 35px 0 16px; font-weight: 800; }
         .article-card h2:first-of-type { margin-top: 0; }
-        .article-card h3 { font-size: 1.35rem; color: var(--text-dark); margin: 24px 0 12px; }
-        .article-card p { margin-bottom: 18px; color: #334155; font-size: 1.05rem; }
-        .article-card ul, .article-card ol { margin: 15px 0 22px 25px; color: #334155; font-size: 1.05rem; }
+        .article-card h3 { font-size: 1.35rem; color: #0f172a; margin: 24px 0 12px; font-weight: 700; }
+        .article-card p { margin-bottom: 18px; color: #1e293b; font-size: 1.05rem; }
+        .article-card ul, .article-card ol { margin: 15px 0 22px 25px; color: #1e293b; font-size: 1.05rem; }
         .article-card li { margin-bottom: 8px; }
 
         .comparison-table { width: 100%; border-collapse: collapse; margin: 25px 0; font-size: 0.95rem; }
-        .comparison-table th, .comparison-table td { border: 1px solid var(--border); padding: 12px 14px; text-align: left; }
-        .comparison-table th { background: #f8fafc; color: var(--primary); font-weight: 700; }
+        .comparison-table th, .comparison-table td { border: 1px solid var(--border); padding: 14px; text-align: left; }
+        .comparison-table th { background: #f8fafc; color: var(--primary); font-weight: 800; }
 
         .faq-item { border-bottom: 1px solid var(--border); padding: 18px 0; }
         .faq-item:last-child { border-bottom: none; }
-        .faq-question { font-size: 1.15rem; font-weight: 700; color: var(--text-dark); margin-bottom: 8px; }
-        .faq-answer { color: var(--text-muted); font-size: 1rem; }
+        .faq-question { font-size: 1.15rem; font-weight: 800; color: #0f172a; margin-bottom: 8px; }
+        .faq-answer { color: #334155; font-size: 1rem; }
 
         /* Footer */
-        footer { background: #0f172a; color: #94a3b8; padding: 45px 20px; font-size: 0.9rem; }
+        footer { background: #0f172a; color: #94a3b8; padding: 45px 20px; font-size: 0.95rem; }
         .footer-container { max-width: 1200px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 20px; }
         .footer-links { display: flex; gap: 20px; }
-        .footer-links a { color: #cbd5e1; text-decoration: none; }
-        .footer-links a:hover { color: #ffffff; }
+        .footer-links a { color: #f1f5f9; text-decoration: none; font-weight: 600; }
+        .footer-links a:hover { text-decoration: underline; }
 
-        /* Print Media Styles (Slip Generator) */
+        /* Print Media Styles */
         @media print {
             nav, .tab-group, .toolbar, .action-btns, .content-section, footer, .btn { display: none !important; }
             body, .app-container { background: white !important; margin: 0; padding: 0; width: 100%; display: block; }
@@ -226,14 +229,14 @@
 <body>
 
     <!-- Header Navigation -->
-    <nav>
+    <nav aria-label="Main Navigation">
         <div class="nav-container">
             <a href="/" class="logo">
-                <span>💵</span> cash denomination calculator
+                <span>💵</span> Cash Denomination Calculator
             </a>
             <div class="nav-links">
-                <a href="/" class="active">Calculator</a>
-                <a href="about.html">About & Methodology</a>
+                <a href="/" class="active" aria-current="page">Calculator</a>
+                <a href="about.html">About &amp; SOP</a>
                 <a href="privacy.html">Privacy Policy</a>
             </div>
         </div>
@@ -241,25 +244,40 @@
 
     <!-- Page Title / Hero -->
     <header class="hero">
-        <h1>cash denomination calculator</h1>
+        <h1>Cash Denomination Calculator &amp; Money Counter</h1>
         <p>The definitive tool for tellers, cashiers, and accounting teams. Count physical notes and coins, split amounts for payroll envelopes, and print verified bank deposit slips instantly.</p>
     </header>
 
     <!-- Main Tool Container -->
     <main class="app-container">
+        
         <!-- Interactive Section -->
-        <section class="card" aria-label="Denomination Calculator Interface">
+        <section class="card" aria-label="Cash Denomination Calculator Interface">
             
-            <!-- Tab Mode Selection -->
-            <div class="tab-group" role="tablist">
-                <button class="tab-btn active" id="tabCount" onclick="switchMode('count')">Mode 1: Cash Counter & Tally</button>
-                <button class="tab-btn" id="tabBreakdown" onclick="switchMode('breakdown')">Mode 2: Split Amount (Breakdown)</button>
+            <!-- ARIA Compliant Tablist -->
+            <div class="tab-group" role="tablist" aria-label="Calculator Modes">
+                <button class="tab-btn" 
+                        role="tab" 
+                        id="tab-count" 
+                        aria-selected="true" 
+                        aria-controls="panel-count" 
+                        onclick="switchMode('count')">
+                    Mode 1: Cash Counter &amp; Tally
+                </button>
+                <button class="tab-btn" 
+                        role="tab" 
+                        id="tab-breakdown" 
+                        aria-selected="false" 
+                        aria-controls="panel-breakdown" 
+                        onclick="switchMode('breakdown')">
+                    Mode 2: Split Amount (Breakdown)
+                </button>
             </div>
 
-            <!-- Configuration Bar -->
+            <!-- Configuration Toolbar -->
             <div class="toolbar">
                 <div class="currency-select-wrapper">
-                    <label for="currencySelect"><strong>Currency:</strong></label>
+                    <label for="currencySelect"><strong>Select Currency:</strong></label>
                     <select id="currencySelect" class="currency-select" onchange="changeCurrency()">
                         <option value="USD">USD ($) - US Dollar</option>
                         <option value="EUR">EUR (€) - Euro</option>
@@ -272,7 +290,7 @@
                     </select>
                 </div>
                 <div>
-                    <button class="btn btn-outline" onclick="resetCalculator()" title="Reset all counts to 0">Clear All (Reset)</button>
+                    <button type="button" class="btn btn-outline" onclick="resetCalculator()" title="Reset all counts to 0">Clear All (Reset)</button>
                 </div>
             </div>
 
@@ -281,17 +299,17 @@
                 <p id="printTimestamp"></p>
             </div>
 
-            <!-- MODE 1: Direct Count Table -->
-            <div id="countMode">
+            <!-- TAB PANEL 1: Direct Count Table -->
+            <div id="panel-count" role="tabpanel" aria-labelledby="tab-count" tabindex="0">
                 <div class="denomination-grid" id="denomRowsContainer">
-                    <!-- Populated dynamically via JavaScript -->
+                    <!-- Populated dynamically with full label association -->
                 </div>
             </div>
 
-            <!-- MODE 2: Reverse Cash Breakdown -->
-            <div id="breakdownMode">
+            <!-- TAB PANEL 2: Reverse Cash Breakdown -->
+            <div id="panel-breakdown" role="tabpanel" aria-labelledby="tab-breakdown" tabindex="0" style="display: none;">
                 <div class="reverse-input-wrap">
-                    <label for="targetAmountInput">Enter Total Amount to Split:</label>
+                    <label for="targetAmountInput">Enter Total Monetary Amount to Split:</label>
                     <input type="number" id="targetAmountInput" class="reverse-big-input" placeholder="e.g. 4850" min="0" step="any" oninput="calculateBreakdown()">
                 </div>
                 <div class="denomination-grid" id="breakdownResultContainer">
@@ -302,7 +320,7 @@
         </section>
 
         <!-- Sticky Summary & Output Sidebar -->
-        <aside class="card summary-card">
+        <aside class="card summary-card" aria-label="Reconciliation Summary">
             <div class="summary-header">
                 <span>Grand Total Summary</span>
                 <div class="grand-total-display" id="grandTotalDisplay">$0.00</div>
@@ -327,19 +345,19 @@
                 </div>
             </div>
 
-            <div class="words-container">
+            <div class="words-container" aria-live="polite">
                 <span class="words-title">Amount In Words:</span>
                 <div id="amountInWordsDisplay">Zero Dollars</div>
             </div>
 
             <div class="action-btns">
-                <button class="btn btn-success" onclick="window.print()">
+                <button type="button" class="btn btn-success" onclick="window.print()" aria-label="Print Deposit or Audit Slip">
                     🖨️ Print Deposit / Audit Slip
                 </button>
-                <button class="btn btn-primary" onclick="exportToCSV()">
+                <button type="button" class="btn btn-primary" onclick="exportToCSV()" aria-label="Export counts to CSV spreadsheet">
                     📥 Export CSV Spreadsheet
                 </button>
-                <button class="btn btn-outline" onclick="copySummaryText()">
+                <button type="button" class="btn btn-outline" onclick="copySummaryText()" aria-label="Copy summary to clipboard">
                     📋 Copy Text Summary
                 </button>
             </div>
@@ -349,19 +367,19 @@
     <!-- Deep SEO Content & Authoritative Guide -->
     <article class="content-section">
         <div class="article-card">
-            <h2>The Comprehensive Guide to Cash Denomination & Register Balancing</h2>
+            <h2>The Comprehensive Guide to Cash Denomination &amp; Register Balancing</h2>
             <p>Managing physical cash remains an indispensable component of retail operations, banking, hospitality, and corporate treasury management. While digital transactions continue to expand globally, billions of daily transactions occur in physical bills and coins. A <strong>cash denomination calculator</strong> serves as a critical internal control instrument, ensuring accuracy during shift changes, end-of-day register tallies, and vault deposits.</p>
 
             <h3>Why Manual Cash Counting Leads to Balance Sheet Discrepancies</h3>
-            <p>Human error during manual cash reconciliation is one of the primary drivers of till variances (overages and shortages). Tellers and cashiers routinely experience fatigue when tallying varied denominations, particularly mixed coin rolls and high-speed banknote counting. Utilizing a digital denomination counter eliminates compounding mathematical errors by calculating linear values ($Face Value \times Quantity$) and providing cross-checks against point-of-sale (POS) batch terminal reports.</p>
+            <p>Human error during manual cash reconciliation is one of the primary drivers of till variances (overages and shortages). Tellers and cashiers routinely experience fatigue when tallying varied denominations, particularly mixed coin rolls and high-speed banknote counting. Utilizing a digital denomination counter eliminates compounding mathematical errors by calculating linear values and providing cross-checks against point-of-sale (POS) batch terminal reports.</p>
 
             <table class="comparison-table">
                 <thead>
                     <tr>
-                        <th>Reconciliation Method</th>
-                        <th>Average Time per Till</th>
-                        <th>Error Rate</th>
-                        <th>Audit Trail Quality</th>
+                        <th scope="col">Reconciliation Method</th>
+                        <th scope="col">Average Time per Till</th>
+                        <th scope="col">Error Rate</th>
+                        <th scope="col">Audit Trail Quality</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -378,10 +396,10 @@
                         <td>Moderate (Requires manual double-entry)</td>
                     </tr>
                     <tr>
-                        <td><strong>cash denomination calculator</strong></td>
+                        <td><strong>Cash Denomination Calculator</strong></td>
                         <td><strong>2 – 3 minutes</strong></td>
                         <td><strong>&lt; 0.01%</strong></td>
-                        <td><strong>Exceptional (Instant CSV & Print slips)</strong></td>
+                        <td><strong>Exceptional (Instant CSV &amp; Print slips)</strong></td>
                     </tr>
                 </tbody>
             </table>
@@ -391,18 +409,13 @@
             <ol>
                 <li><strong>Establish the Cash Float / Starting Drawer:</strong> Before adding sales revenues, segregate your static opening float (e.g., $150 or 500 SAR) and verify that the base change reserves match policy.</li>
                 <li><strong>Classify and Group Banknotes:</strong> Arrange banknotes facing the same direction, segregating damaged or non-standard notes, grouped from the highest unit denomination down to minor coins.</li>
-                <li><strong>Batch Entry via cash denomination calculator:</strong> Input each bundle or stack count into the respective input row. The tool will instantly refresh piece counts, subtotals, and overall sum.</li>
+                <li><strong>Batch Entry via Cash Denomination Calculator:</strong> Input each bundle or stack count into the respective input row. The tool will instantly refresh piece counts, subtotals, and overall sum.</li>
                 <li><strong>Compare with the POS X/Z Report:</strong> Match the "Grand Total Cash Collected" against the terminal's Z-Reading. Document any variance in your till log.</li>
-                <li><strong>Generate & Sign the Deposit Documentation:</strong> Print the formatted audit slip generated by this tool, bind it directly to the bank deposit tamper-evident pouch, and obtain managerial sign-off.</li>
+                <li><strong>Generate &amp; Sign the Deposit Documentation:</strong> Print the formatted audit slip generated by this tool, bind it directly to the bank deposit tamper-evident pouch, and obtain managerial sign-off.</li>
             </ol>
 
             <h2>Reverse Cash Breakdown: Optimal Bill Splitting Algorithm</h2>
-            <p>Our tool integrates a dedicated <em>Greedy Change-Making Algorithm</em> within <strong>Mode 2 (Split Amount)</strong>. Rather than guessing how many 100, 50, or 20 bills to prepare when paying unbanked employees or distributing petty cash envelopes, the algorithm iteratively calculates:</p>
-            <p style="background: #f1f5f9; padding: 12px; border-left: 4px solid var(--primary); font-family: monospace;">
-                Count_i = floor(Remaining_Balance / Denomination_i)<br>
-                Remaining_Balance = Remaining_Balance - (Count_i * Denomination_i)
-            </p>
-            <p>This guarantees that the recipient receives the absolute minimum number of physical notes, expediting disbursement speed and preventing treasury stockouts.</p>
+            <p>Our tool integrates a dedicated <em>Greedy Change-Making Algorithm</em> within <strong>Mode 2 (Split Amount)</strong>. Rather than guessing how many 100, 50, or 20 bills to prepare when paying unbanked employees or distributing petty cash envelopes, the algorithm iteratively calculates the minimal set of notes.</p>
 
             <h2>Frequently Asked Questions (FAQ)</h2>
             <div class="faq-item">
@@ -424,17 +437,17 @@
     <footer>
         <div class="footer-container">
             <div>
-                <strong>cash denomination calculator</strong> — Built for Professional Accountants & Retail Managers.
+                <strong>Cash Denomination Calculator</strong> — Built for Professional Accountants &amp; Retail Managers.
             </div>
             <div class="footer-links">
-                <a href="/">Tool</a>
-                <a href="about.html">About & Principles</a>
+                <a href="/">Calculator</a>
+                <a href="about.html">About &amp; SOP</a>
                 <a href="privacy.html">Privacy Policy</a>
             </div>
         </div>
     </footer>
 
-    <!-- Core Interactive Logic -->
+    <!-- Interactive Engine & Accessibility Handlers -->
     <script>
         const CURRENCIES = {
             USD: {
@@ -613,13 +626,14 @@
                 const row = document.createElement('div');
                 row.className = 'denom-row';
                 row.innerHTML = `
-                    <div class="denom-badge">
+                    <label for="denom_input_${idx}" class="denom-badge">
                         ${d.type === 'note' ? '💵' : '🪙'} ${d.label}
-                    </div>
+                    </label>
                     <div class="denom-input-wrap">
                         <input type="number" 
                                id="denom_input_${idx}" 
                                class="denom-input" 
+                               aria-label="Quantity for ${d.label}"
                                placeholder="0" 
                                min="0" 
                                step="1" 
@@ -627,7 +641,7 @@
                                data-type="${d.type}"
                                oninput="recalculateTotals()">
                     </div>
-                    <div class="denom-subtotal" id="denom_sub_${idx}">
+                    <div class="denom-subtotal" id="denom_sub_${idx}" aria-label="Subtotal for ${d.label}">
                         ${currency.symbol}0.00
                     </div>
                 `;
@@ -697,22 +711,22 @@
 
         function switchMode(mode) {
             currentMode = mode;
-            const tabCount = document.getElementById('tabCount');
-            const tabBreakdown = document.getElementById('tabBreakdown');
-            const countBox = document.getElementById('countMode');
-            const breakdownBox = document.getElementById('breakdownMode');
+            const tabCount = document.getElementById('tab-count');
+            const tabBreakdown = document.getElementById('tab-breakdown');
+            const panelCount = document.getElementById('panel-count');
+            const panelBreakdown = document.getElementById('panel-breakdown');
 
             if (mode === 'count') {
-                tabCount.classList.add('active');
-                tabBreakdown.classList.remove('active');
-                countBox.style.display = 'block';
-                breakdownBox.style.display = 'none';
+                tabCount.setAttribute('aria-selected', 'true');
+                tabBreakdown.setAttribute('aria-selected', 'false');
+                panelCount.style.display = 'block';
+                panelBreakdown.style.display = 'none';
                 recalculateTotals();
             } else {
-                tabBreakdown.classList.add('active');
-                tabCount.classList.remove('active');
-                countBox.style.display = 'none';
-                breakdownBox.style.display = 'block';
+                tabBreakdown.setAttribute('aria-selected', 'true');
+                tabCount.setAttribute('aria-selected', 'false');
+                panelCount.style.display = 'none';
+                panelBreakdown.style.display = 'block';
                 calculateBreakdown();
             }
         }
@@ -762,9 +776,9 @@
             if (remaining > 0.001) {
                 const remainderRow = document.createElement('div');
                 remainderRow.style.padding = "10px";
-                remainderRow.style.color = "#dc2626";
-                remainderRow.style.fontWeight = "600";
-                remainderRow.innerText = `Unrounded residual: ${currency.symbol}${remaining.toFixed(2)} (no smaller coins available)`;
+                remainderRow.style.color = "#b91c1c";
+                remainderRow.style.fontWeight = "700";
+                remainderRow.innerText = `Unrounded residual: ${currency.symbol}${remaining.toFixed(2)} (no smaller coin available)`;
                 container.appendChild(remainderRow);
             }
 
