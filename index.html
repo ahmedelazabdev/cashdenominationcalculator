@@ -1,859 +1,1564 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- Optimized High-CTR & Front-Loaded Keyword Title -->
-    <title>Cash Denomination Calculator: Fast Bill &amp; Coin Counter (Instant Deposit Slip)</title>
-    <meta name="description" content="Free Cash Denomination Calculator & Currency Counter. Calculate banknote totals, coins, amount in words, cash breakdown for bank deposits, payroll envelopes, and till reconciliation. Supports USD, EUR, GBP, SAR, AED, EGP, and INR.">
-    <meta name="keywords" content="cash denomination calculator, money counter calculator, currency breakdown calculator, bank deposit slip calculator, cash tally counter, bill counter online, till reconciliation tool">
-    <meta name="author" content="DenomiCalc Pro">
-    <link rel="canonical" href="https://yourdomain.com//">
-    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>💵</text></svg>">
-    
-    <!-- Open Graph / Social Media -->
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://yourdomain.com/">
-    <meta property="og:title" content="Cash Denomination Calculator: Fast Bill &amp; Coin Counter">
-    <meta property="og:description" content="Instant bill counter, coin breakdown, amount-in-words generator, and printable bank deposit slip. 100% private, client-side calculator.">
-    
-    <!-- Structured Data (SoftwareApplication + HowTo + FAQPage) -->
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@graph": [
-        {
-          "@type": "SoftwareApplication",
-          "name": "Cash Denomination Calculator",
-          "operatingSystem": "All",
-          "applicationCategory": "BusinessApplication",
-          "offers": {
-            "@type": "Offer",
-            "price": "0",
-            "priceCurrency": "USD"
-          },
-          "aggregateRating": {
-            "@type": "AggregateRating",
-            "ratingValue": "4.9",
-            "ratingCount": "1280"
-          },
-          "description": "Professional cash denomination calculator and money counter for cashiers, bank tellers, and accountants."
-        },
-        {
-          "@type": "HowTo",
-          "name": "How to Count Cash and Prepare a Bank Deposit Slip",
-          "step": [
-            {
-              "@type": "HowToStep",
-              "name": "Sort Cash by Denomination",
-              "text": "Separate your banknotes and coins into distinct stacks ordered from highest face value to lowest."
-            },
-            {
-              "@type": "HowToStep",
-              "name": "Input Quantities in the Calculator",
-              "text": "Select your currency and type the count of bills or coins present in each stack."
-            },
-            {
-              "@type": "HowToStep",
-              "name": "Verify Totals and Words",
-              "text": "Check the grand total, subtotal breakdown, and generated words for accuracy against your POS register."
-            },
-            {
-              "@type": "HowToStep",
-              "name": "Print or Export Summary",
-              "text": "Click Print or Export to CSV to attach the formal denomination slip to your deposit bag or audit binder."
-            }
-          ]
-        },
-        {
-          "@type": "FAQPage",
-          "mainEntity": [
-            {
-              "@type": "Question",
-              "name": "What is a cash denomination calculator?",
-              "acceptedAnswer": {
-                "@type": "Answer",
-                "text": "A cash denomination calculator is a financial tool that tallies physical currency by multiplying each banknote and coin denomination by its quantity. It calculates real-time sub-totals, the grand total, the total number of physical pieces, and translates amounts into written words."
-              }
-            },
-            {
-              "@type": "Question",
-              "name": "How does the Reverse Cash Breakdown mode work?",
-              "acceptedAnswer": {
-                "@type": "Answer",
-                "text": "The breakdown mode uses a greedy algorithmic distribution to split any total monetary amount into the fewest possible physical notes and coins, making it indispensable for payroll envelopes and petty cash disbursements."
-              }
-            },
-            {
-              "@type": "Question",
-              "name": "Is my financial calculation data stored on a server?",
-              "acceptedAnswer": {
-                "@type": "Answer",
-                "text": "No. All calculations are executed 100% locally on your browser using client-side JavaScript. No monetary amounts, till numbers, or counts are sent to any remote server."
-              }
-            }
-          ]
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  
+  <!-- High-CTR SEO Meta -->
+  <title>Cash Denomination Calculator 💵 Count Cash, Till & Bank Deposits (100% Free)</title>
+  <meta name="description" content="Instantly count cash, calculate till drawer float, and reconcile daily bank deposits. Free online cash denomination counter supporting USD, EUR, GBP, EGP, SAR, AED, and INR.">
+  <meta name="keywords" content="cash denomination calculator, cash counter, cash drawer reconciliation, till counter online, money counter calculator, count cash notes and coins, bank deposit slip calculator">
+  <meta name="author" content="Ahmed Elazab">
+  <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
+  
+  <!-- Absolute Canonical URL -->
+  <link rel="canonical" href="https://ahmedelazabdev.github.io/cashdenominationcalculator/">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://ahmedelazabdev.github.io/cashdenominationcalculator/">
+  <meta property="og:title" content="Cash Denomination Calculator 💵 Count Cash & Reconcile Drawers">
+  <meta property="og:description" content="Count currency notes and coins instantly with live float deduction, amount in words, and printable shift breakdown slips.">
+  <meta property="og:locale" content="en_US">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Cash Denomination Calculator 💵 Online Till & Cash Counter">
+  <meta name="twitter:description" content="Fast, error-free cash denomination counter for cashiers, accountants, and retail store owners. Real-time note and coin tally.">
+
+  <!-- Structured Data: WebApplication, HowTo & FAQPage Schema -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "WebApplication",
+        "name": "Cash Denomination Calculator & Drawer Reconciler",
+        "url": "https://ahmedelazabdev.github.io/cashdenominationcalculator/",
+        "applicationCategory": "BusinessApplication",
+        "operatingSystem": "All",
+        "description": "A financial calculator utility designed for retailers, cashiers, and bank tellers to tally cash bills, coins, opening floats, and bank deposit breakdowns in real-time.",
+        "offers": {
+          "@type": "Offer",
+          "price": "0",
+          "priceCurrency": "USD"
         }
-      ]
+      },
+      {
+        "@type": "HowTo",
+        "name": "How to Reconcile a Cash Drawer Using a Denomination Calculator",
+        "description": "Step-by-step instructions to count register cash, deduct opening float, and balance end-of-day till totals.",
+        "step": [
+          {
+            "@type": "HowToStep",
+            "name": "Select Currency",
+            "text": "Choose your operating currency (e.g., USD, EUR, GBP, EGP, SAR, AED) to load standard circulating banknote and coin denominations."
+          },
+          {
+            "@type": "HowToStep",
+            "name": "Count and Enter Quantities",
+            "text": "Tally each bill and coin stack in your drawer and type the quantity into the corresponding denomination input row."
+          },
+          {
+            "@type": "HowToStep",
+            "name": "Input Opening Float (Optional)",
+            "text": "Enter your starting base change float to automatically deduct starting cash and reveal net sales deposit amount."
+          },
+          {
+            "@type": "HowToStep",
+            "name": "Export or Print Summary",
+            "text": "Copy the formatted audit summary to your clipboard or print an official daily register closing slip."
+          }
+        ]
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "What is a cash denomination calculator?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "A cash denomination calculator is an accounting tool that multiplies the physical quantity of each specific banknote and coin by its face value, generating a real-time grand total, note count, coin count, and currency breakdown for daily cash drawer reconciliation."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "What is an opening cash float?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "An opening cash float (also called base float or petty cash fund) is the fixed sum of small bills and coins placed in the cash register at the beginning of a shift to provide change for customers. It must be subtracted from the total cash counted at closing to determine net daily revenue."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Does this calculator store financial data?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "No. The calculator operates 100% locally in your web browser using client-side JavaScript. None of your sales numbers, cash tallies, or drawer amounts are ever sent to a server or stored remotely."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Can I print a physical closing slip for my cash drop envelope?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes. Click the 'Print Cash Slip' button to generate a clean, printer-friendly summary showing the full denomination tally, total bills, total coins, and manager signature lines."
+            }
+          }
+        ]
+      }
+    ]
+  }
+  </script>
+
+  <style>
+    :root {
+      --primary: #1d4ed8;
+      --primary-hover: #1e40af;
+      --primary-soft: #eff6ff;
+      --accent: #047857;
+      --accent-soft: #d1fae5;
+      --accent-text: #064e3b;
+      --bg: #f8fafc;
+      --surface: #ffffff;
+      --border: #cbd5e1;
+      --text: #0f172a;
+      --text-muted: #334155;
+      --shadow-sm: 0 1px 3px rgba(0,0,0,0.06);
+      --shadow-md: 0 4px 6px -1px rgba(0,0,0,0.08);
+      --shadow-xl: 0 10px 25px -5px rgba(0,0,0,0.08);
+      --radius: 14px;
+      /* Zero-CLS Native System Font Stack */
+      --font-stack: system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+      --font-mono: SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', 'Courier New', monospace;
     }
-    </script>
 
-    <style>
-        :root {
-            --primary: #1e3a8a;
-            --primary-hover: #172554;
-            --secondary: #065f46; /* High contrast: 7.4:1 ratio on white */
-            --secondary-hover: #044e3b;
-            --accent: #b45309;
-            --bg-main: #f8fafc;
-            --bg-card: #ffffff;
-            --text-dark: #0f172a;
-            --text-muted: #334155; /* Meets WCAG AAA 7:1 ratio */
-            --border: #cbd5e1;
-            --shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.05), 0 4px 6px -2px rgba(0, 0, 0, 0.03);
-            --radius: 12px;
-        }
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
 
-        * { box-sizing: border-box; margin: 0; padding: 0; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, sans-serif; }
-        body { background-color: var(--bg-main); color: var(--text-dark); line-height: 1.6; }
+    body {
+      font-family: var(--font-stack);
+      background-color: var(--bg);
+      color: var(--text);
+      line-height: 1.7;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      text-rendering: optimizeSpeed;
+    }
 
-        /* Navigation */
-        nav { background: var(--bg-card); border-bottom: 1px solid var(--border); position: sticky; top: 0; z-index: 100; box-shadow: 0 1px 3px rgba(0,0,0,0.05); }
-        .nav-container { max-width: 1200px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; padding: 14px 20px; }
-        .logo { font-size: 1.35rem; font-weight: 800; color: var(--primary); text-decoration: none; display: flex; align-items: center; gap: 8px; }
-        .nav-links { display: flex; gap: 20px; }
-        .nav-links a { text-decoration: none; color: var(--text-muted); font-weight: 700; font-size: 0.95rem; transition: color 0.2s; }
-        .nav-links a:hover, .nav-links a.active { color: var(--primary); text-decoration: underline; }
+    /* Fixed 64px Header */
+    header {
+      background: var(--surface);
+      border-bottom: 1px solid var(--border);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      box-shadow: var(--shadow-sm);
+      height: 64px;
+      overflow: hidden;
+    }
 
-        /* Hero */
-        .hero { max-width: 1200px; margin: 40px auto 25px; padding: 0 20px; text-align: center; }
-        .hero h1 { font-size: 2.4rem; color: var(--text-dark); margin-bottom: 12px; font-weight: 800; }
-        .hero p { color: var(--text-muted); font-size: 1.15rem; max-width: 760px; margin: 0 auto; font-weight: 500; }
+    .nav-inner {
+      max-width: 1050px;
+      margin: 0 auto;
+      padding: 0 20px;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
 
-        /* Calculator App Container */
-        .app-container { max-width: 1200px; margin: 0 auto 50px; padding: 0 20px; display: grid; grid-template-columns: 1fr 380px; gap: 30px; }
-        @media (max-width: 960px) { .app-container { grid-template-columns: 1fr; } }
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: var(--primary);
+      text-decoration: none;
+    }
 
-        .card { background: var(--bg-card); border-radius: var(--radius); border: 1px solid var(--border); box-shadow: var(--shadow); padding: 25px; }
+    .brand-badge {
+      background: var(--primary);
+      color: #fff;
+      width: 36px;
+      height: 36px;
+      border-radius: 8px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.15rem;
+      flex-shrink: 0;
+    }
 
-        /* ARIA Tablist Fixes */
-        .tab-group { display: flex; background: #e2e8f0; border-radius: 8px; padding: 5px; margin-bottom: 20px; gap: 6px; }
-        .tab-btn { flex: 1; border: none; background: transparent; padding: 12px 16px; border-radius: 6px; font-weight: 700; cursor: pointer; color: #1e293b; transition: all 0.2s; font-size: 0.95rem; }
-        .tab-btn[aria-selected="true"] { background: #ffffff; color: var(--primary); box-shadow: 0 2px 5px rgba(0,0,0,0.1); }
-        .tab-btn:focus-visible { outline: 2px solid var(--primary); outline-offset: 2px; }
+    .status-tag {
+      background: var(--accent-soft);
+      color: var(--accent-text);
+      padding: 4px 12px;
+      border-radius: 9999px;
+      font-size: 0.82rem;
+      font-weight: 700;
+      border: 1px solid #a7f3d0;
+    }
 
-        /* Config Bar */
-        .toolbar { display: flex; justify-content: space-between; align-items: center; gap: 15px; margin-bottom: 20px; flex-wrap: wrap; }
-        .currency-select-wrapper { display: flex; align-items: center; gap: 10px; }
-        .currency-select { padding: 10px 14px; border: 2px solid var(--border); border-radius: 8px; font-size: 0.95rem; font-weight: 700; color: var(--text-dark); outline: none; background: #fff; cursor: pointer; }
-        .currency-select:focus { border-color: var(--primary); }
+    main {
+      max-width: 1050px;
+      width: 100%;
+      margin: 24px auto 40px;
+      padding: 0 16px;
+      flex: 1;
+      contain: layout style;
+    }
 
-        /* High Contrast Buttons */
-        .btn { padding: 11px 18px; border: none; border-radius: 8px; font-size: 0.95rem; font-weight: 700; cursor: pointer; transition: 0.2s; display: inline-flex; align-items: center; justify-content: center; gap: 8px; }
-        .btn-outline { background: #ffffff; border: 2px solid var(--border); color: #0f172a; }
-        .btn-outline:hover { background: #f1f5f9; border-color: #94a3b8; }
-        .btn-success { background: var(--secondary); color: #ffffff; } /* WCAG AAA Passed */
-        .btn-success:hover { background: var(--secondary-hover); }
-        .btn-primary { background: var(--primary); color: #ffffff; }
-        .btn-primary:hover { background: var(--primary-hover); }
+    /* Hero Section */
+    .hero {
+      text-align: center;
+      margin-bottom: 24px;
+    }
 
-        /* Denomination Grid */
-        .denomination-grid { display: flex; flex-direction: column; gap: 10px; }
-        .denom-row { display: grid; grid-template-columns: 140px 1fr 140px; align-items: center; gap: 15px; padding: 12px 16px; border-radius: 8px; background: #f8fafc; border: 1px solid var(--border); }
-        .denom-badge { font-weight: 800; font-size: 1.05rem; color: var(--primary); display: flex; align-items: center; gap: 6px; cursor: pointer; }
-        .denom-input-wrap { position: relative; }
-        .denom-input { width: 100%; padding: 10px 14px; border: 2px solid var(--border); border-radius: 6px; font-size: 1.05rem; font-weight: 700; text-align: center; outline: none; color: #0f172a; }
-        .denom-input:focus { border-color: var(--primary); background: #ffffff; }
-        .denom-subtotal { text-align: right; font-weight: 800; font-size: 1.05rem; color: #0f172a; }
+    .hero h1 {
+      font-size: 2.2rem;
+      font-weight: 800;
+      line-height: 1.3;
+      margin-bottom: 8px;
+      color: var(--text);
+    }
 
-        /* Summary Sidebar */
-        .summary-card { position: sticky; top: 90px; display: flex; flex-direction: column; gap: 20px; }
-        .summary-header { border-bottom: 2px dashed var(--border); padding-bottom: 15px; }
-        .summary-header span { font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.05em; font-weight: 800; color: #334155; }
-        .grand-total-display { font-size: 2.3rem; font-weight: 900; color: var(--primary); line-height: 1.1; margin-top: 5px; }
-        .stats-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
-        .stat-box { background: #f1f5f9; padding: 12px; border-radius: 8px; border: 1px solid #e2e8f0; }
-        .stat-box small { font-size: 0.8rem; color: #334155; display: block; font-weight: 700; text-transform: uppercase; }
-        .stat-box strong { font-size: 1.25rem; color: #0f172a; font-weight: 800; }
+    .hero h1 span {
+      color: var(--primary);
+    }
 
-        /* High-Contrast Words Container */
-        .words-container { background: #ecfdf5; border: 1.5px solid #059669; border-radius: 8px; padding: 14px; font-size: 0.95rem; color: #064e3b; font-weight: 600; }
-        .words-title { font-weight: 800; margin-bottom: 4px; display: block; font-size: 0.85rem; text-transform: uppercase; color: #065f46; }
+    .hero p {
+      font-size: 1.05rem;
+      color: var(--text-muted);
+      max-width: 760px;
+      margin: 0 auto;
+      line-height: 1.6;
+    }
 
-        .action-btns { display: flex; flex-direction: column; gap: 12px; }
+    /* Main Calculator Card */
+    .calc-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow-xl);
+      overflow: hidden;
+      margin-bottom: 36px;
+    }
 
-        /* Breakdown Mode */
-        .reverse-input-wrap { margin-bottom: 20px; }
-        .reverse-input-wrap label { font-weight: 800; display: block; margin-bottom: 8px; font-size: 1.05rem; }
-        .reverse-big-input { width: 100%; padding: 14px 18px; border: 2.5px solid var(--border); border-radius: 8px; font-size: 1.5rem; font-weight: 800; color: var(--primary); outline: none; }
-        .reverse-big-input:focus { border-color: var(--primary); }
+    .card-topbar {
+      background: #f1f5f9;
+      padding: 14px 20px;
+      border-bottom: 1px solid var(--border);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
 
-        /* Long Form Article Content */
-        .content-section { max-width: 1000px; margin: 40px auto 80px; padding: 0 20px; }
-        .article-card { background: #ffffff; border-radius: var(--radius); border: 1px solid var(--border); padding: 40px; box-shadow: var(--shadow); }
-        .article-card h2 { font-size: 1.85rem; color: var(--primary); margin: 35px 0 16px; font-weight: 800; }
-        .article-card h2:first-of-type { margin-top: 0; }
-        .article-card h3 { font-size: 1.35rem; color: #0f172a; margin: 24px 0 12px; font-weight: 700; }
-        .article-card p { margin-bottom: 18px; color: #1e293b; font-size: 1.05rem; }
-        .article-card ul, .article-card ol { margin: 15px 0 22px 25px; color: #1e293b; font-size: 1.05rem; }
-        .article-card li { margin-bottom: 8px; }
+    .currency-selector-wrap {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
 
-        .comparison-table { width: 100%; border-collapse: collapse; margin: 25px 0; font-size: 0.95rem; }
-        .comparison-table th, .comparison-table td { border: 1px solid var(--border); padding: 14px; text-align: left; }
-        .comparison-table th { background: #f8fafc; color: var(--primary); font-weight: 800; }
+    .currency-label {
+      font-size: 0.9rem;
+      font-weight: 700;
+      color: var(--text-muted);
+    }
 
-        .faq-item { border-bottom: 1px solid var(--border); padding: 18px 0; }
-        .faq-item:last-child { border-bottom: none; }
-        .faq-question { font-size: 1.15rem; font-weight: 800; color: #0f172a; margin-bottom: 8px; }
-        .faq-answer { color: #334155; font-size: 1rem; }
+    select.currency-dropdown {
+      padding: 7px 12px;
+      border-radius: 8px;
+      border: 1px solid var(--border);
+      background: var(--surface);
+      font-family: inherit;
+      font-size: 0.92rem;
+      font-weight: 700;
+      color: var(--text);
+      cursor: pointer;
+      outline: none;
+    }
 
-        /* Footer */
-        footer { background: #0f172a; color: #94a3b8; padding: 45px 20px; font-size: 0.95rem; }
-        .footer-container { max-width: 1200px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 20px; }
-        .footer-links { display: flex; gap: 20px; }
-        .footer-links a { color: #f1f5f9; text-decoration: none; font-weight: 600; }
-        .footer-links a:hover { text-decoration: underline; }
+    select.currency-dropdown:focus {
+      border-color: var(--primary);
+    }
 
-        /* Print Media Styles */
-        @media print {
-            nav, .tab-group, .toolbar, .action-btns, .content-section, footer, .btn { display: none !important; }
-            body, .app-container { background: white !important; margin: 0; padding: 0; width: 100%; display: block; }
-            .card { border: none !important; box-shadow: none !important; padding: 0 !important; }
-            .print-receipt-header { display: block !important; margin-bottom: 20px; text-align: center; border-bottom: 2px solid #000; padding-bottom: 10px; }
-            .denom-row { border: 1px solid #ccc; margin-bottom: 4px; padding: 6px; }
-            .summary-card { position: static; border-top: 2px solid #000; margin-top: 20px; padding-top: 15px; }
-        }
-        .print-receipt-header { display: none; }
-    </style>
+    .topbar-actions {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .btn-topbar {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 7px 14px;
+      border-radius: 8px;
+      font-family: inherit;
+      font-size: 0.85rem;
+      font-weight: 700;
+      cursor: pointer;
+      border: 1px solid var(--border);
+      background: var(--surface);
+      color: var(--text);
+      transition: all 0.15s ease;
+    }
+
+    .btn-topbar:hover {
+      background: #e2e8f0;
+    }
+
+    /* Two-Column App Layout */
+    .calc-grid {
+      display: grid;
+      grid-template-columns: 1.25fr 1fr;
+    }
+
+    @media (max-width: 820px) {
+      .calc-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    /* Left: Denominations Entry Table */
+    .denom-entry-pane {
+      padding: 20px;
+      border-right: 1px solid var(--border);
+    }
+
+    @media (max-width: 820px) {
+      .denom-entry-pane {
+        border-right: none;
+        border-bottom: 1px solid var(--border);
+      }
+    }
+
+    .pane-title {
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--text);
+      margin-bottom: 14px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .denom-table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+
+    .denom-table th {
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      color: var(--text-muted);
+      padding: 8px 10px;
+      text-align: left;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .denom-table td {
+      padding: 8px 10px;
+      border-bottom: 1px solid #f1f5f9;
+      vertical-align: middle;
+    }
+
+    .denom-badge {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-width: 60px;
+      padding: 4px 10px;
+      background: #f1f5f9;
+      color: #1e293b;
+      font-weight: 700;
+      font-size: 0.95rem;
+      border-radius: 6px;
+      font-family: var(--font-mono);
+      border: 1px solid #e2e8f0;
+    }
+
+    .qty-input {
+      width: 90px;
+      height: 38px;
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 0 10px;
+      font-family: var(--font-mono);
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: var(--text);
+      text-align: right;
+      outline: none;
+      transition: border-color 0.15s ease;
+    }
+
+    .qty-input:focus {
+      border-color: var(--primary);
+    }
+
+    .row-total {
+      font-family: var(--font-mono);
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--text);
+      text-align: right;
+      font-variant-numeric: tabular-nums;
+    }
+
+    /* Right: Live Tally & Reconciliation Card */
+    .summary-pane {
+      padding: 24px;
+      background: #f8fafc;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    .total-display-card {
+      background: var(--surface);
+      border: 1px solid #bfdbfe;
+      border-radius: 12px;
+      padding: 20px;
+      box-shadow: var(--shadow-sm);
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+    }
+
+    .total-title {
+      font-size: 0.85rem;
+      font-weight: 700;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    .total-amount {
+      font-size: 2.4rem;
+      font-weight: 800;
+      color: var(--primary);
+      font-variant-numeric: tabular-nums;
+      line-height: 1.1;
+    }
+
+    .words-card {
+      background: #ffffff;
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 12px 16px;
+      font-size: 0.92rem;
+      font-weight: 600;
+      color: #1e3a8a;
+      line-height: 1.5;
+      min-height: 52px;
+    }
+
+    .metrics-summary-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
+    }
+
+    .metric-subcard {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 12px 14px;
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+    }
+
+    .metric-label {
+      font-size: 0.78rem;
+      font-weight: 700;
+      color: var(--text-muted);
+      text-transform: uppercase;
+    }
+
+    .metric-val {
+      font-size: 1.3rem;
+      font-weight: 800;
+      color: var(--text);
+      font-variant-numeric: tabular-nums;
+    }
+
+    /* Float Balancing Box */
+    .float-box {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 14px;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .float-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 0.85rem;
+      font-weight: 700;
+      color: var(--text);
+    }
+
+    .float-input-row {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .float-input {
+      flex: 1;
+      height: 38px;
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 0 10px;
+      font-family: var(--font-mono);
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--text);
+      text-align: right;
+    }
+
+    .net-deposit-val {
+      font-size: 1.1rem;
+      font-weight: 800;
+      color: var(--accent);
+      font-variant-numeric: tabular-nums;
+    }
+
+    .summary-actions-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
+      margin-top: 6px;
+    }
+
+    .btn-calc-action {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+      padding: 10px 14px;
+      border-radius: 8px;
+      font-family: inherit;
+      font-size: 0.88rem;
+      font-weight: 700;
+      cursor: pointer;
+      border: 1px solid var(--border);
+      background: var(--surface);
+      color: var(--text);
+      transition: all 0.15s ease;
+    }
+
+    .btn-calc-action:hover {
+      background: #e2e8f0;
+    }
+
+    .btn-primary-action {
+      background: var(--primary);
+      border-color: var(--primary);
+      color: #ffffff;
+    }
+
+    .btn-primary-action:hover {
+      background: var(--primary-hover);
+    }
+
+    /* Semantic 3-Step Instruction Bar */
+    .action-steps-bar {
+      padding: 16px 20px;
+      background: #f8fafc;
+      border-top: 1px solid var(--border);
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+    }
+
+    @media (max-width: 768px) {
+      .action-steps-bar {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .action-step {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+    }
+
+    .step-num {
+      width: 28px;
+      height: 28px;
+      border-radius: 50%;
+      background: var(--primary-soft);
+      color: #1e40af;
+      font-weight: 800;
+      font-size: 0.9rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      margin-top: 2px;
+    }
+
+    .step-title {
+      display: block;
+      font-size: 0.95rem;
+      font-weight: 700;
+      color: var(--text);
+      margin-bottom: 2px;
+    }
+
+    .step-text p {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      line-height: 1.4;
+    }
+
+    /* Long-Form Knowledge Base */
+    .article-container {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 40px;
+      box-shadow: var(--shadow-sm);
+      margin-bottom: 40px;
+      content-visibility: auto;
+      contain-intrinsic-size: 1000px 1800px;
+    }
+
+    @media (max-width: 600px) {
+      .article-container {
+        padding: 24px 18px;
+      }
+    }
+
+    .article-container h2 {
+      font-size: 1.65rem;
+      font-weight: 800;
+      color: var(--text);
+      margin: 36px 0 16px;
+      padding-bottom: 10px;
+      border-bottom: 2px solid #e2e8f0;
+      position: relative;
+    }
+
+    .article-container h2::after {
+      content: '';
+      position: absolute;
+      bottom: -2px;
+      left: 0;
+      width: 60px;
+      height: 2px;
+      background: var(--primary);
+    }
+
+    .article-container h2:first-of-type {
+      margin-top: 0;
+    }
+
+    .article-container h3 {
+      font-size: 1.25rem;
+      font-weight: 700;
+      margin: 24px 0 12px;
+      color: #1e293b;
+    }
+
+    .article-container p {
+      font-size: 1.05rem;
+      color: var(--text-muted);
+      margin-bottom: 20px;
+      text-align: justify;
+    }
+
+    .article-container ul, .article-container ol {
+      margin: 0 0 24px 24px;
+      color: var(--text-muted);
+      font-size: 1.02rem;
+    }
+
+    .article-container li {
+      margin-bottom: 10px;
+    }
+
+    .highlight-card {
+      background: var(--primary-soft);
+      border-left: 4px solid var(--primary);
+      padding: 16px 20px;
+      border-radius: 0 10px 10px 0;
+      margin: 24px 0;
+      color: #1e3a8a;
+      font-size: 1rem;
+    }
+
+    /* Comparison Table in Article */
+    .table-wrap {
+      overflow-x: auto;
+      margin: 24px 0;
+      border-radius: 10px;
+      border: 1px solid var(--border);
+    }
+
+    table.content-table {
+      width: 100%;
+      border-collapse: collapse;
+      text-align: left;
+      font-size: 0.95rem;
+    }
+
+    table.content-table thead {
+      background: #f1f5f9;
+    }
+
+    table.content-table th, table.content-table td {
+      padding: 14px 16px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    table.content-table th {
+      font-weight: 700;
+      color: var(--text);
+    }
+
+    table.content-table tbody tr:hover {
+      background-color: #f8fafc;
+    }
+
+    /* FAQ Accordion */
+    .faq-block {
+      margin-top: 24px;
+    }
+
+    .faq-card {
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      margin-bottom: 12px;
+      background: #f8fafc;
+    }
+
+    .faq-header {
+      padding: 16px 20px;
+      font-weight: 700;
+      font-size: 1.02rem;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      user-select: none;
+      color: var(--text);
+    }
+
+    .faq-header:hover {
+      color: var(--primary);
+    }
+
+    .faq-body {
+      padding: 0 20px 16px;
+      color: var(--text-muted);
+      font-size: 0.98rem;
+      display: none;
+      line-height: 1.7;
+    }
+
+    .faq-card.open {
+      background: var(--surface);
+      border-color: var(--primary);
+    }
+
+    .faq-card.open .faq-body {
+      display: block;
+    }
+
+    .faq-toggle {
+      font-size: 1.3rem;
+      line-height: 1;
+      font-weight: 700;
+    }
+
+    .faq-card.open .faq-toggle {
+      transform: rotate(45deg);
+    }
+
+    /* Toast */
+    #toast {
+      position: fixed;
+      bottom: 24px;
+      left: 50%;
+      transform: translateX(-50%) translateY(100px);
+      background: #0f172a;
+      color: #fff;
+      padding: 10px 24px;
+      border-radius: 9999px;
+      font-size: 0.92rem;
+      font-weight: 700;
+      box-shadow: var(--shadow-xl);
+      transition: transform 0.25s ease;
+      z-index: 1000;
+      pointer-events: none;
+    }
+
+    #toast.active {
+      transform: translateX(-50%) translateY(0);
+    }
+
+    /* Footer */
+    footer {
+      background: var(--surface);
+      border-top: 1px solid var(--border);
+      padding: 28px 16px;
+      margin-top: auto;
+    }
+
+    .footer-wrap {
+      max-width: 1050px;
+      margin: 0 auto;
+      text-align: center;
+      font-size: 0.9rem;
+      color: var(--text-muted);
+    }
+
+    .footer-nav {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      margin-top: 10px;
+    }
+
+    .footer-nav a {
+      color: var(--text-muted);
+      text-decoration: none;
+      font-weight: 600;
+    }
+
+    .footer-nav a:hover {
+      color: var(--primary);
+    }
+
+    /* Print Stylesheet for Official Bank/Register Drop Slips */
+    @media print {
+      header, .hero, .card-topbar, .action-steps-bar, .article-container, footer, #toast, .summary-actions-grid {
+        display: none !important;
+      }
+      body {
+        background: #ffffff;
+        color: #000000;
+      }
+      .calc-card {
+        border: none;
+        box-shadow: none;
+      }
+      .calc-grid {
+        display: block;
+      }
+      .denom-entry-pane, .summary-pane {
+        padding: 0;
+        background: #ffffff;
+        border: none;
+      }
+      .qty-input {
+        border: 1px solid #000;
+      }
+    }
+  </style>
 </head>
 <body>
 
-    <!-- Header Navigation -->
-    <nav aria-label="Main Navigation">
-        <div class="nav-container">
-            <a href="/" class="logo">
-                <span>💵</span> Cash Denomination Calculator
-            </a>
-            <div class="nav-links">
-                <a href="/" class="active" aria-current="page">Calculator</a>
-                <a href="about.html">About &amp; SOP</a>
-                <a href="privacy.html">Privacy Policy</a>
-            </div>
+  <!-- Header -->
+  <header>
+    <div class="nav-inner">
+      <a href="https://ahmedelazabdev.github.io/cashdenominationcalculator/" class="brand">
+        <span class="brand-badge">💵</span>
+        <span>Cash Denomination Calculator</span>
+      </a>
+      <span class="status-tag">Multi-Currency Till Reconciler</span>
+    </div>
+  </header>
+
+  <main>
+
+    <!-- Hero Section -->
+    <section class="hero">
+      <h1>Cash Denomination Calculator 💵 <span>Count Cash & Reconcile Tills</span></h1>
+      <p>Instantly calculate banknote and coin totals, balance register floats, and generate daily cash drop slips for retail stores, banking deposits, and financial shift audits.</p>
+    </section>
+
+    <!-- Main Calculator Card -->
+    <section class="calc-card" id="calculator-app">
+      <div class="card-topbar">
+        <div class="currency-selector-wrap">
+          <label class="currency-label" for="currency-select">Currency:</label>
+          <select id="currency-select" class="currency-dropdown" onchange="changeCurrency()">
+            <option value="USD" selected>US Dollar ($ - USD)</option>
+            <option value="EUR">Euro (€ - EUR)</option>
+            <option value="GBP">British Pound (£ - GBP)</option>
+            <option value="EGP">Egyptian Pound (E£ - EGP)</option>
+            <option value="SAR">Saudi Riyal (ر.س - SAR)</option>
+            <option value="AED">UAE Dirham (د.إ - AED)</option>
+            <option value="INR">Indian Rupee (₹ - INR)</option>
+            <option value="CAD">Canadian Dollar (C$ - CAD)</option>
+            <option value="AUD">Australian Dollar (A$ - AUD)</option>
+          </select>
         </div>
-    </nav>
 
-    <!-- Page Title / Hero -->
-    <header class="hero">
-        <h1>Cash Denomination Calculator &amp; Money Counter</h1>
-        <p>The definitive tool for tellers, cashiers, and accounting teams. Count physical notes and coins, split amounts for payroll envelopes, and print verified bank deposit slips instantly.</p>
-    </header>
-
-    <!-- Main Tool Container -->
-    <main class="app-container">
-        
-        <!-- Interactive Section -->
-        <section class="card" aria-label="Cash Denomination Calculator Interface">
-            
-            <!-- ARIA Compliant Tablist -->
-            <div class="tab-group" role="tablist" aria-label="Calculator Modes">
-                <button class="tab-btn" 
-                        role="tab" 
-                        id="tab-count" 
-                        aria-selected="true" 
-                        aria-controls="panel-count" 
-                        onclick="switchMode('count')">
-                    Mode 1: Cash Counter &amp; Tally
-                </button>
-                <button class="tab-btn" 
-                        role="tab" 
-                        id="tab-breakdown" 
-                        aria-selected="false" 
-                        aria-controls="panel-breakdown" 
-                        onclick="switchMode('breakdown')">
-                    Mode 2: Split Amount (Breakdown)
-                </button>
-            </div>
-
-            <!-- Configuration Toolbar -->
-            <div class="toolbar">
-                <div class="currency-select-wrapper">
-                    <label for="currencySelect"><strong>Select Currency:</strong></label>
-                    <select id="currencySelect" class="currency-select" onchange="changeCurrency()">
-                        <option value="USD">USD ($) - US Dollar</option>
-                        <option value="EUR">EUR (€) - Euro</option>
-                        <option value="GBP">GBP (£) - British Pound</option>
-                        <option value="SAR">SAR (ر.س) - Saudi Riyal</option>
-                        <option value="AED">AED (د.إ) - UAE Dirham</option>
-                        <option value="EGP">EGP (ج.م) - Egyptian Pound</option>
-                        <option value="KWD">KWD (د.ك) - Kuwaiti Dinar</option>
-                        <option value="INR">INR (₹) - Indian Rupee</option>
-                    </select>
-                </div>
-                <div>
-                    <button type="button" class="btn btn-outline" onclick="resetCalculator()" title="Reset all counts to 0">Clear All (Reset)</button>
-                </div>
-            </div>
-
-            <div class="print-receipt-header">
-                <h2>CASH DENOMINATION AUDIT SLIP</h2>
-                <p id="printTimestamp"></p>
-            </div>
-
-            <!-- TAB PANEL 1: Direct Count Table -->
-            <div id="panel-count" role="tabpanel" aria-labelledby="tab-count" tabindex="0">
-                <div class="denomination-grid" id="denomRowsContainer">
-                    <!-- Populated dynamically with full label association -->
-                </div>
-            </div>
-
-            <!-- TAB PANEL 2: Reverse Cash Breakdown -->
-            <div id="panel-breakdown" role="tabpanel" aria-labelledby="tab-breakdown" tabindex="0" style="display: none;">
-                <div class="reverse-input-wrap">
-                    <label for="targetAmountInput">Enter Total Monetary Amount to Split:</label>
-                    <input type="number" id="targetAmountInput" class="reverse-big-input" placeholder="e.g. 4850" min="0" step="any" oninput="calculateBreakdown()">
-                </div>
-                <div class="denomination-grid" id="breakdownResultContainer">
-                    <!-- Breakdown results rendered dynamically -->
-                </div>
-            </div>
-
-        </section>
-
-        <!-- Sticky Summary & Output Sidebar -->
-        <aside class="card summary-card" aria-label="Reconciliation Summary">
-            <div class="summary-header">
-                <span>Grand Total Summary</span>
-                <div class="grand-total-display" id="grandTotalDisplay">$0.00</div>
-            </div>
-
-            <div class="stats-grid">
-                <div class="stat-box">
-                    <small>Total Notes</small>
-                    <strong id="totalNotesDisplay">0</strong>
-                </div>
-                <div class="stat-box">
-                    <small>Total Coins</small>
-                    <strong id="totalCoinsDisplay">0</strong>
-                </div>
-                <div class="stat-box">
-                    <small>Total Pieces</small>
-                    <strong id="totalPiecesDisplay">0</strong>
-                </div>
-                <div class="stat-box">
-                    <small>Active Denoms</small>
-                    <strong id="activeDenomsDisplay">0</strong>
-                </div>
-            </div>
-
-            <div class="words-container" aria-live="polite">
-                <span class="words-title">Amount In Words:</span>
-                <div id="amountInWordsDisplay">Zero Dollars</div>
-            </div>
-
-            <div class="action-btns">
-                <button type="button" class="btn btn-success" onclick="window.print()" aria-label="Print Deposit or Audit Slip">
-                    🖨️ Print Deposit / Audit Slip
-                </button>
-                <button type="button" class="btn btn-primary" onclick="exportToCSV()" aria-label="Export counts to CSV spreadsheet">
-                    📥 Export CSV Spreadsheet
-                </button>
-                <button type="button" class="btn btn-outline" onclick="copySummaryText()" aria-label="Copy summary to clipboard">
-                    📋 Copy Text Summary
-                </button>
-            </div>
-        </aside>
-    </main>
-
-    <!-- Deep SEO Content & Authoritative Guide -->
-    <article class="content-section">
-        <div class="article-card">
-            <h2>The Comprehensive Guide to Cash Denomination &amp; Register Balancing</h2>
-            <p>Managing physical cash remains an indispensable component of retail operations, banking, hospitality, and corporate treasury management. While digital transactions continue to expand globally, billions of daily transactions occur in physical bills and coins. A <strong>cash denomination calculator</strong> serves as a critical internal control instrument, ensuring accuracy during shift changes, end-of-day register tallies, and vault deposits.</p>
-
-            <h3>Why Manual Cash Counting Leads to Balance Sheet Discrepancies</h3>
-            <p>Human error during manual cash reconciliation is one of the primary drivers of till variances (overages and shortages). Tellers and cashiers routinely experience fatigue when tallying varied denominations, particularly mixed coin rolls and high-speed banknote counting. Utilizing a digital denomination counter eliminates compounding mathematical errors by calculating linear values and providing cross-checks against point-of-sale (POS) batch terminal reports.</p>
-
-            <table class="comparison-table">
-                <thead>
-                    <tr>
-                        <th scope="col">Reconciliation Method</th>
-                        <th scope="col">Average Time per Till</th>
-                        <th scope="col">Error Rate</th>
-                        <th scope="col">Audit Trail Quality</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>Traditional Mental/Paper Tally</td>
-                        <td>12 – 18 minutes</td>
-                        <td>4.8%</td>
-                        <td>Poor (Paper scratch pads prone to loss)</td>
-                    </tr>
-                    <tr>
-                        <td>Generic Handheld Calculator</td>
-                        <td>8 – 11 minutes</td>
-                        <td>2.3%</td>
-                        <td>Moderate (Requires manual double-entry)</td>
-                    </tr>
-                    <tr>
-                        <td><strong>Cash Denomination Calculator</strong></td>
-                        <td><strong>2 – 3 minutes</strong></td>
-                        <td><strong>&lt; 0.01%</strong></td>
-                        <td><strong>Exceptional (Instant CSV &amp; Print slips)</strong></td>
-                    </tr>
-                </tbody>
-            </table>
-
-            <h2>How to Perform an End-of-Day Till Reconciliation: Step-by-Step SOP</h2>
-            <p>Standard Operating Procedures (SOPs) in retail and commercial banking mandate consistent cash handling. Follow this verified 5-stage auditing methodology:</p>
-            <ol>
-                <li><strong>Establish the Cash Float / Starting Drawer:</strong> Before adding sales revenues, segregate your static opening float (e.g., $150 or 500 SAR) and verify that the base change reserves match policy.</li>
-                <li><strong>Classify and Group Banknotes:</strong> Arrange banknotes facing the same direction, segregating damaged or non-standard notes, grouped from the highest unit denomination down to minor coins.</li>
-                <li><strong>Batch Entry via Cash Denomination Calculator:</strong> Input each bundle or stack count into the respective input row. The tool will instantly refresh piece counts, subtotals, and overall sum.</li>
-                <li><strong>Compare with the POS X/Z Report:</strong> Match the "Grand Total Cash Collected" against the terminal's Z-Reading. Document any variance in your till log.</li>
-                <li><strong>Generate &amp; Sign the Deposit Documentation:</strong> Print the formatted audit slip generated by this tool, bind it directly to the bank deposit tamper-evident pouch, and obtain managerial sign-off.</li>
-            </ol>
-
-            <h2>Reverse Cash Breakdown: Optimal Bill Splitting Algorithm</h2>
-            <p>Our tool integrates a dedicated <em>Greedy Change-Making Algorithm</em> within <strong>Mode 2 (Split Amount)</strong>. Rather than guessing how many 100, 50, or 20 bills to prepare when paying unbanked employees or distributing petty cash envelopes, the algorithm iteratively calculates the minimal set of notes.</p>
-
-            <h2>Frequently Asked Questions (FAQ)</h2>
-            <div class="faq-item">
-                <div class="faq-question">What is a cash denomination calculator?</div>
-                <div class="faq-answer">It is an accounting application designed to tabulate total monetary figures based on the unit counts of specific currency notes and coins. It replaces manual arithmetic with real-time multiplication and structured reporting.</div>
-            </div>
-            <div class="faq-item">
-                <div class="faq-question">Can I use this calculator offline?</div>
-                <div class="faq-answer">Yes. The cash denomination calculator runs client-side inside modern web browsers. Once the webpage loads, you can disconnect from the internet or use it in secure corporate environments without any data disruption.</div>
-            </div>
-            <div class="faq-item">
-                <div class="faq-question">How does Amount in Words help bank deposits?</div>
-                <div class="faq-answer">Commercial banking regulations universally require that cash deposit slips specify the aggregate amount written out in textual words (legal amount) to prevent fraudulent alterations of numeric numbers. Our automated converter handles this requirement instantly.</div>
-            </div>
+        <div class="topbar-actions">
+          <button class="btn-topbar" onclick="clearAllInputs()">
+            <span>✖ Clear Quantities</span>
+          </button>
         </div>
+      </div>
+
+      <!-- App Dual-Pane Grid -->
+      <div class="calc-grid">
+        <!-- Left Column: Denomination Entry -->
+        <div class="denom-entry-pane">
+          <div class="pane-title">
+            <span>Denomination Quantities</span>
+            <span style="font-size:0.85rem; font-weight:600; color:var(--text-muted);">Notes & Coins</span>
+          </div>
+
+          <table class="denom-table">
+            <thead>
+              <tr>
+                <th>Denomination</th>
+                <th style="text-align:right;">Count / Qty</th>
+                <th style="text-align:right;">Subtotal</th>
+              </tr>
+            </thead>
+            <tbody id="denom-rows-tbody">
+              <!-- Rendered Dynamically via JS -->
+            </tbody>
+          </table>
+        </div>
+
+        <!-- Right Column: Live Summary & Reconciliation -->
+        <div class="summary-pane">
+          <div class="total-display-card">
+            <span class="total-title">Total Cash Count</span>
+            <div class="total-amount" id="grand-total-display">$0.00</div>
+          </div>
+
+          <!-- Amount In Words -->
+          <div class="words-card" id="amount-words-display">
+            Zero Dollars Only.
+          </div>
+
+          <!-- Notes & Coins Metric Breakdown -->
+          <div class="metrics-summary-grid">
+            <div class="metric-subcard">
+              <span class="metric-label">Total Notes</span>
+              <span class="metric-val" id="total-notes-count">0</span>
+            </div>
+            <div class="metric-subcard">
+              <span class="metric-label">Total Coins</span>
+              <span class="metric-val" id="total-coins-count">0</span>
+            </div>
+          </div>
+
+          <!-- Register Float Reconciliation -->
+          <div class="float-box">
+            <div class="float-header">
+              <span>Less Opening Float (Starting Base):</span>
+            </div>
+            <div class="float-input-row">
+              <input type="number" id="float-input" class="float-input" value="0" min="0" step="any" oninput="calculateGrandTotal()" aria-label="Opening Cash Float">
+            </div>
+            <div style="display:flex; justify-content:space-between; align-items:center; margin-top:4px;">
+              <span style="font-size:0.88rem; font-weight:700; color:var(--text-muted);">Net Bank Deposit:</span>
+              <span class="net-deposit-val" id="net-deposit-display">$0.00</span>
+            </div>
+          </div>
+
+          <!-- Action Buttons -->
+          <div class="summary-actions-grid">
+            <button class="btn-calc-action btn-primary-action" onclick="copySummaryToClipboard()">
+              📋 Copy Summary
+            </button>
+            <button class="btn-calc-action" onclick="window.print()">
+              🖨️ Print Slip
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Semantic 3-Step Instruction Bar (No h4 skips) -->
+      <div class="action-steps-bar">
+        <div class="action-step">
+          <span class="step-num">1</span>
+          <div class="step-text">
+            <strong class="step-title">Count Each Stack</strong>
+            <p>Sort banknotes and coins by denomination and type each physical count into the quantity column.</p>
+          </div>
+        </div>
+        <div class="action-step">
+          <span class="step-num">2</span>
+          <div class="step-text">
+            <strong class="step-title">Deduct Till Float</strong>
+            <p>Enter starting change cash into the opening float field to separate base cash from net daily revenue.</p>
+          </div>
+        </div>
+        <div class="action-step">
+          <span class="step-num">3</span>
+          <div class="step-text">
+            <strong class="step-title">Reconcile & Audit</strong>
+            <p>Compare the calculated net deposit against your POS Z-report to identify drawer overages or shortages.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Comprehensive Financial Knowledge Base & Guide -->
+    <article class="article-container">
+      <h2>What is Cash Denomination Breakdown and Why is it Essential?</h2>
+      <p>
+        In physical retail, hospitality, banking, and commercial accounting, <strong>cash denomination calculation</strong> is the process of categorizing and counting physical currency by its discrete face values (e.g., $100, $50, $20, $10, $5, $1 bills and fractional coins).
+      </p>
+
+      <div class="highlight-card">
+        <strong>💡 The Core Objective:</strong> Counting cash by denomination eliminates tallying mistakes, creates a documented audit trail for armored courier pickups, and verifies that the physical contents of a cash register drawer align with recorded point-of-sale (POS) transactional records.
+      </div>
+
+      <h3>The Mechanics of Daily Cash Drawer Reconciliation</h3>
+      <p>
+        Every retail shift or commercial business day follows a structured cash lifecycle:
+      </p>
+      <ol>
+        <li><strong>The Opening Float (Starting Bank):</strong> Before doors open, a designated base amount of small bills and coins (typically $150 to $300) is placed into the till. This float exists solely to provide change to paying customers and must never be recorded as revenue.</li>
+        <li><strong>Mid-Day Cash Drops (Skims):</strong> To minimize robbery exposure and keep register cash below insurance thresholds, managers periodically sweep excess large bills ($50s and $100s) from the till and deposit them into a secure drop safe.</li>
+        <li><strong>End-of-Shift Cashing Up (The Till Count):</strong> At the end of trading, all remaining currency is counted by denomination. The opening float is subtracted from the gross total. The resulting <strong>Net Cash Deposit</strong> is then compared against the POS Z-Report (the register's cumulative cash sales log).</li>
+      </ol>
+
+      <h2>Comparison Table: Cash Management & Reconciliation Methods</h2>
+      <div class="table-wrap">
+        <table class="content-table">
+          <thead>
+            <tr>
+              <th>Method</th>
+              <th>Speed</th>
+              <th>Human Error Risk</th>
+              <th>Audit Trail & Usability</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Digital Denomination Calculator</strong></td>
+              <td>Fast (Instant live math)</td>
+              <td>Extremely Low (Automated arithmetic)</td>
+              <td>Instant clipboard summary, zero cost, printer friendly</td>
+            </tr>
+            <tr>
+              <td><strong>Physical Currency Counter Machine</strong></td>
+              <td>Ultra-Fast (Mechanical sorting)</td>
+              <td>Low (Subject to mechanical jams)</td>
+              <td>Requires costly hardware ($300 - $2,500), does not count coins</td>
+            </tr>
+            <tr>
+              <td><strong>Spreadsheet Template (Excel / Sheets)</strong></td>
+              <td>Moderate</td>
+              <td>Medium (Accidental formula deletion)</td>
+              <td>Requires computer workstation at checkout counter</td>
+            </tr>
+            <tr>
+              <td><strong>Pen and Paper Mental Math</strong></td>
+              <td>Slow (15–25 mins per drawer)</td>
+              <td>Very High (Frequent addition mistakes)</td>
+              <td>Messy handwriting, easily lost or altered slips</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h2>Cash Discrepancies Explained: Overages vs. Shortages</h2>
+      <p>
+        When closing out a till, the calculated Net Cash Deposit rarely matches the POS Z-report to the exact cent due to human interaction:
+      </p>
+      <ul>
+        <li><strong>Cash Over (Overage):</strong> The drawer contains more physical cash than expected by the POS. This typically occurs when a cashier accidentally under-gives change to a customer or forgets to ring up a transaction.</li>
+        <li><strong>Cash Short (Shortage):</strong> The drawer contains less physical cash than required. Common causes include handing out extra change, ringing up an incorrect bill amount, accepting counterfeit notes, or internal theft.</li>
+      </ul>
+      <p>
+        Most retail businesses establish a daily tolerance threshold (e.g., ±$3.00). Discrepancies exceeding this amount typically trigger an immediate re-count by a second manager or supervisor.
+      </p>
+
+      <h2>Best Practice Internal Controls for Cash Handling</h2>
+      <ol>
+        <li><strong>The Dual-Custody Rule:</strong> High-volume businesses should enforce two employees (a cashier and a shift manager) counting and co-signing the closing denomination slip.</li>
+        <li><strong>Segregation of Duties:</strong> The staff member counting the cash drawer should not be the same individual responsible for reconciling the bank deposit slip against the general ledger.</li>
+        <li><strong>Immediate Safe Drops:</strong> Never leave accumulated cash stacks sitting in open view behind the register. Always transfer counted currency into tamper-evident tamper-proof deposit bags.</li>
+      </ol>
+
+      <h2>Frequently Asked Questions (FAQ)</h2>
+      <div class="faq-block">
+        <div class="faq-card">
+          <div class="faq-header" onclick="toggleFaqCard(this)">
+            <span>Why does the calculator subtract the opening float?</span>
+            <span class="faq-toggle">+</span>
+          </div>
+          <div class="faq-body">
+            The opening float is money your business already owned prior to trading. Subtracting the float ensures you only deposit your actual daily net cash sales at the bank, leaving the base float intact for the next day's shift.
+          </div>
+        </div>
+
+        <div class="faq-card">
+          <div class="faq-header" onclick="toggleFaqCard(this)">
+            <span>Can I customize the currency denominations?</span>
+            <span class="faq-toggle">+</span>
+          </div>
+          <div class="faq-body">
+            Yes. Use the currency dropdown at the top to select from major global currencies including USD ($), EUR (€), GBP (£), EGP (E£), SAR (ر.س), AED (د.إ), and INR (₹). Each profile loads official circulating banknotes and coin denominations.
+          </div>
+        </div>
+
+        <div class="faq-card">
+          <div class="faq-header" onclick="toggleFaqCard(this)">
+            <span>How do I save or export my cash drawer tally?</span>
+            <span class="faq-toggle">+</span>
+          </div>
+          <div class="faq-body">
+            You can click 'Copy Summary' to copy a structured text breakdown directly to your clipboard for pasting into Slack, email, or your spreadsheet log. Alternatively, click 'Print Slip' to print a physical paper voucher for cash envelopes.
+          </div>
+        </div>
+
+        <div class="faq-card">
+          <div class="faq-header" onclick="toggleFaqCard(this)">
+            <span>Is this cash denomination tool secure for confidential business use?</span>
+            <span class="faq-toggle">+</span>
+          </div>
+          <div class="faq-body">
+            Yes, 100%. All arithmetic runs purely in your device's browser memory via client-side JavaScript. No sales data, denomination amounts, or financial numbers are transmitted to any server.
+          </div>
+        </div>
+      </div>
     </article>
 
-    <!-- Global Footer -->
-    <footer>
-        <div class="footer-container">
-            <div>
-                <strong>Cash Denomination Calculator</strong> — Built for Professional Accountants &amp; Retail Managers.
+  </main>
+
+  <!-- Notification Toast -->
+  <div id="toast">Ready!</div>
+
+  <!-- Footer -->
+  <footer>
+    <div class="footer-wrap">
+      <p>© <span id="current-year"></span> All rights reserved — Cash Denomination Calculator & Reconciler.</p>
+      <div class="footer-nav">
+        <a href="#calculator-app">Cash Calculator</a>
+        <a href="https://1io-site.blogspot.com" target="_blank" rel="noopener">By: 1io.site</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Instant Cash Denomination Engine -->
+  <script>
+    document.getElementById('current-year').textContent = new Date().getFullYear();
+
+    // Currency Denomination Configurations
+    const currencyProfiles = {
+      USD: {
+        symbol: "$",
+        name: "US Dollar",
+        unitSingle: "Dollar",
+        unitPlural: "Dollars",
+        fractionSingle: "Cent",
+        fractionPlural: "Cents",
+        denominations: [
+          { value: 100, label: "$100", type: "note" },
+          { value: 50, label: "$50", type: "note" },
+          { value: 20, label: "$20", type: "note" },
+          { value: 10, label: "$10", type: "note" },
+          { value: 5, label: "$5", type: "note" },
+          { value: 2, label: "$2", type: "note" },
+          { value: 1, label: "$1", type: "note" },
+          { value: 0.50, label: "50¢", type: "coin" },
+          { value: 0.25, label: "25¢ (Quarter)", type: "coin" },
+          { value: 0.10, label: "10¢ (Dime)", type: "coin" },
+          { value: 0.05, label: "5¢ (Nickel)", type: "coin" },
+          { value: 0.01, label: "1¢ (Penny)", type: "coin" }
+        ]
+      },
+      EUR: {
+        symbol: "€",
+        name: "Euro",
+        unitSingle: "Euro",
+        unitPlural: "Euros",
+        fractionSingle: "Cent",
+        fractionPlural: "Cents",
+        denominations: [
+          { value: 500, label: "€500", type: "note" },
+          { value: 200, label: "€200", type: "note" },
+          { value: 100, label: "€100", type: "note" },
+          { value: 50, label: "€50", type: "note" },
+          { value: 20, label: "€20", type: "note" },
+          { value: 10, label: "€10", type: "note" },
+          { value: 5, label: "€5", type: "note" },
+          { value: 2, label: "€2", type: "coin" },
+          { value: 1, label: "€1", type: "coin" },
+          { value: 0.50, label: "50c", type: "coin" },
+          { value: 0.20, label: "20c", type: "coin" },
+          { value: 0.10, label: "10c", type: "coin" },
+          { value: 0.05, label: "5c", type: "coin" },
+          { value: 0.02, label: "2c", type: "coin" },
+          { value: 0.01, label: "1c", type: "coin" }
+        ]
+      },
+      GBP: {
+        symbol: "£",
+        name: "British Pound",
+        unitSingle: "Pound",
+        unitPlural: "Pounds",
+        fractionSingle: "Penny",
+        fractionPlural: "Pence",
+        denominations: [
+          { value: 50, label: "£50", type: "note" },
+          { value: 20, label: "£20", type: "note" },
+          { value: 10, label: "£10", type: "note" },
+          { value: 5, label: "£5", type: "note" },
+          { value: 2, label: "£2", type: "coin" },
+          { value: 1, label: "£1", type: "coin" },
+          { value: 0.50, label: "50p", type: "coin" },
+          { value: 0.20, label: "20p", type: "coin" },
+          { value: 0.10, label: "10p", type: "coin" },
+          { value: 0.05, label: "5p", type: "coin" },
+          { value: 0.02, label: "2p", type: "coin" },
+          { value: 0.01, label: "1p", type: "coin" }
+        ]
+      },
+      EGP: {
+        symbol: "E£",
+        name: "Egyptian Pound",
+        unitSingle: "Pound",
+        unitPlural: "Pounds",
+        fractionSingle: "Piastre",
+        fractionPlural: "Piastres",
+        denominations: [
+          { value: 200, label: "200 E£", type: "note" },
+          { value: 100, label: "100 E£", type: "note" },
+          { value: 50, label: "50 E£", type: "note" },
+          { value: 20, label: "20 E£", type: "note" },
+          { value: 10, label: "10 E£", type: "note" },
+          { value: 5, label: "5 E£", type: "note" },
+          { value: 1, label: "1 E£ (Coin)", type: "coin" },
+          { value: 0.50, label: "50 Pt", type: "coin" },
+          { value: 0.25, label: "25 Pt", type: "coin" }
+        ]
+      },
+      SAR: {
+        symbol: "ر.س",
+        name: "Saudi Riyal",
+        unitSingle: "Riyal",
+        unitPlural: "Riyals",
+        fractionSingle: "Halala",
+        fractionPlural: "Halalas",
+        denominations: [
+          { value: 500, label: "500 ر.س", type: "note" },
+          { value: 200, label: "200 ر.س", type: "note" },
+          { value: 100, label: "100 ر.س", type: "note" },
+          { value: 50, label: "50 ر.س", type: "note" },
+          { value: 20, label: "20 ر.س", type: "note" },
+          { value: 10, label: "10 ر.س", type: "note" },
+          { value: 5, label: "5 ر.س", type: "note" },
+          { value: 2, label: "2 ر.س (Coin)", type: "coin" },
+          { value: 1, label: "1 ر.س (Coin)", type: "coin" },
+          { value: 0.50, label: "50 Halala", type: "coin" },
+          { value: 0.25, label: "25 Halala", type: "coin" }
+        ]
+      },
+      AED: {
+        symbol: "AED",
+        name: "UAE Dirham",
+        unitSingle: "Dirham",
+        unitPlural: "Dirhams",
+        fractionSingle: "Fils",
+        fractionPlural: "Fils",
+        denominations: [
+          { value: 1000, label: "1,000 AED", type: "note" },
+          { value: 500, label: "500 AED", type: "note" },
+          { value: 200, label: "200 AED", type: "note" },
+          { value: 100, label: "100 AED", type: "note" },
+          { value: 50, label: "50 AED", type: "note" },
+          { value: 20, label: "20 AED", type: "note" },
+          { value: 10, label: "10 AED", type: "note" },
+          { value: 5, label: "5 AED", type: "note" },
+          { value: 1, label: "1 AED (Coin)", type: "coin" },
+          { value: 0.50, label: "50 Fils", type: "coin" },
+          { value: 0.25, label: "25 Fils", type: "coin" }
+        ]
+      },
+      INR: {
+        symbol: "₹",
+        name: "Indian Rupee",
+        unitSingle: "Rupee",
+        unitPlural: "Rupees",
+        fractionSingle: "Paisa",
+        fractionPlural: "Paise",
+        denominations: [
+          { value: 500, label: "₹500", type: "note" },
+          { value: 200, label: "₹200", type: "note" },
+          { value: 100, label: "₹100", type: "note" },
+          { value: 50, label: "₹50", type: "note" },
+          { value: 20, label: "₹20", type: "note" },
+          { value: 10, label: "₹10", type: "note" },
+          { value: 5, label: "₹5 (Coin)", type: "coin" },
+          { value: 2, label: "₹2 (Coin)", type: "coin" },
+          { value: 1, label: "₹1 (Coin)", type: "coin" }
+        ]
+      },
+      CAD: {
+        symbol: "C$",
+        name: "Canadian Dollar",
+        unitSingle: "Dollar",
+        unitPlural: "Dollars",
+        fractionSingle: "Cent",
+        fractionPlural: "Cents",
+        denominations: [
+          { value: 100, label: "$100", type: "note" },
+          { value: 50, label: "$50", type: "note" },
+          { value: 20, label: "$20", type: "note" },
+          { value: 10, label: "$10", type: "note" },
+          { value: 5, label: "$5", type: "note" },
+          { value: 2, label: "$2 (Toonie)", type: "coin" },
+          { value: 1, label: "$1 (Loonie)", type: "coin" },
+          { value: 0.25, label: "25¢", type: "coin" },
+          { value: 0.10, label: "10¢", type: "coin" },
+          { value: 0.05, label: "5¢", type: "coin" }
+        ]
+      },
+      AUD: {
+        symbol: "A$",
+        name: "Australian Dollar",
+        unitSingle: "Dollar",
+        unitPlural: "Dollars",
+        fractionSingle: "Cent",
+        fractionPlural: "Cents",
+        denominations: [
+          { value: 100, label: "$100", type: "note" },
+          { value: 50, label: "$50", type: "note" },
+          { value: 20, label: "$20", type: "note" },
+          { value: 10, label: "$10", type: "note" },
+          { value: 5, label: "$5", type: "note" },
+          { value: 2, label: "$2", type: "coin" },
+          { value: 1, label: "$1", type: "coin" },
+          { value: 0.50, label: "50¢", type: "coin" },
+          { value: 0.20, label: "20¢", type: "coin" },
+          { value: 0.10, label: "10¢", type: "coin" },
+          { value: 0.05, label: "5¢", type: "coin" }
+        ]
+      }
+    };
+
+    let activeCurrencyKey = "USD";
+
+    function renderDenominationRows() {
+      const tbody = document.getElementById('denom-rows-tbody');
+      tbody.innerHTML = '';
+
+      const profile = currencyProfiles[activeCurrencyKey];
+
+      profile.denominations.forEach((denom, idx) => {
+        const tr = document.createElement('tr');
+        tr.innerHTML = `
+          <td>
+            <div style="display:flex; align-items:center; gap:8px;">
+              <span class="denom-badge">${denom.label}</span>
+              <span style="font-size:0.78rem; color:var(--text-muted);">${denom.type === 'note' ? 'Note' : 'Coin'}</span>
             </div>
-            <div class="footer-links">
-                <a href="/">Calculator</a>
-                <a href="about.html">About &amp; SOP</a>
-                <a href="privacy.html">Privacy Policy</a>
-            </div>
-        </div>
-    </footer>
+          </td>
+          <td style="text-align:right;">
+            <input type="number" 
+                   id="qty-input-${idx}" 
+                   class="qty-input" 
+                   min="0" 
+                   value="0" 
+                   data-value="${denom.value}" 
+                   data-label="${denom.label}"
+                   data-type="${denom.type}"
+                   oninput="calculateGrandTotal()" 
+                   aria-label="${denom.label} count">
+          </td>
+          <td style="text-align:right;">
+            <span class="row-total" id="row-total-${idx}">${profile.symbol}0.00</span>
+          </td>
+        `;
+        tbody.appendChild(tr);
+      });
 
-    <!-- Interactive Engine & Accessibility Handlers -->
-    <script>
-        const CURRENCIES = {
-            USD: {
-                symbol: '$',
-                name: 'USD',
-                wordUnit: 'Dollar',
-                wordUnits: 'Dollars',
-                wordSub: 'Cent',
-                wordSubs: 'Cents',
-                denoms: [
-                    { value: 100, label: '$100 Bill', type: 'note' },
-                    { value: 50, label: '$50 Bill', type: 'note' },
-                    { value: 20, label: '$20 Bill', type: 'note' },
-                    { value: 10, label: '$10 Bill', type: 'note' },
-                    { value: 5, label: '$5 Bill', type: 'note' },
-                    { value: 2, label: '$2 Bill', type: 'note' },
-                    { value: 1, label: '$1 Bill', type: 'note' },
-                    { value: 0.25, label: '25¢ Quarter', type: 'coin' },
-                    { value: 0.10, label: '10¢ Dime', type: 'coin' },
-                    { value: 0.05, label: '5¢ Nickel', type: 'coin' },
-                    { value: 0.01, label: '1¢ Penny', type: 'coin' }
-                ]
-            },
-            EUR: {
-                symbol: '€',
-                name: 'EUR',
-                wordUnit: 'Euro',
-                wordUnits: 'Euros',
-                wordSub: 'Cent',
-                wordSubs: 'Cents',
-                denoms: [
-                    { value: 200, label: '€200 Note', type: 'note' },
-                    { value: 100, label: '€100 Note', type: 'note' },
-                    { value: 50, label: '€50 Note', type: 'note' },
-                    { value: 20, label: '€20 Note', type: 'note' },
-                    { value: 10, label: '€10 Note', type: 'note' },
-                    { value: 5, label: '€5 Note', type: 'note' },
-                    { value: 2, label: '€2 Coin', type: 'coin' },
-                    { value: 1, label: '€1 Coin', type: 'coin' },
-                    { value: 0.50, label: '50c Coin', type: 'coin' },
-                    { value: 0.20, label: '20c Coin', type: 'coin' },
-                    { value: 0.10, label: '10c Coin', type: 'coin' },
-                    { value: 0.05, label: '5c Coin', type: 'coin' }
-                ]
-            },
-            GBP: {
-                symbol: '£',
-                name: 'GBP',
-                wordUnit: 'Pound',
-                wordUnits: 'Pounds',
-                wordSub: 'Penny',
-                wordSubs: 'Pence',
-                denoms: [
-                    { value: 50, label: '£50 Note', type: 'note' },
-                    { value: 20, label: '£20 Note', type: 'note' },
-                    { value: 10, label: '£10 Note', type: 'note' },
-                    { value: 5, label: '£5 Note', type: 'note' },
-                    { value: 2, label: '£2 Coin', type: 'coin' },
-                    { value: 1, label: '£1 Coin', type: 'coin' },
-                    { value: 0.50, label: '50p Coin', type: 'coin' },
-                    { value: 0.20, label: '20p Coin', type: 'coin' },
-                    { value: 0.10, label: '10p Coin', type: 'coin' },
-                    { value: 0.05, label: '5p Coin', type: 'coin' },
-                    { value: 0.02, label: '2p Coin', type: 'coin' },
-                    { value: 0.01, label: '1p Coin', type: 'coin' }
-                ]
-            },
-            SAR: {
-                symbol: 'ر.س',
-                name: 'SAR',
-                wordUnit: 'Riyal',
-                wordUnits: 'Riyals',
-                wordSub: 'Halala',
-                wordSubs: 'Halalas',
-                denoms: [
-                    { value: 500, label: '500 SAR Note', type: 'note' },
-                    { value: 200, label: '200 SAR Note', type: 'note' },
-                    { value: 100, label: '100 SAR Note', type: 'note' },
-                    { value: 50, label: '50 SAR Note', type: 'note' },
-                    { value: 20, label: '20 SAR Note', type: 'note' },
-                    { value: 10, label: '10 SAR Note', type: 'note' },
-                    { value: 5, label: '5 SAR Note', type: 'note' },
-                    { value: 2, label: '2 SAR Coin', type: 'coin' },
-                    { value: 1, label: '1 SAR Coin', type: 'coin' },
-                    { value: 0.50, label: '0.50 SAR Coin', type: 'coin' },
-                    { value: 0.25, label: '0.25 SAR Coin', type: 'coin' }
-                ]
-            },
-            AED: {
-                symbol: 'د.إ',
-                name: 'AED',
-                wordUnit: 'Dirham',
-                wordUnits: 'Dirhams',
-                wordSub: 'Fils',
-                wordSubs: 'Fils',
-                denoms: [
-                    { value: 1000, label: '1000 AED Note', type: 'note' },
-                    { value: 500, label: '500 AED Note', type: 'note' },
-                    { value: 200, label: '200 AED Note', type: 'note' },
-                    { value: 100, label: '100 AED Note', type: 'note' },
-                    { value: 50, label: '50 AED Note', type: 'note' },
-                    { value: 20, label: '20 AED Note', type: 'note' },
-                    { value: 10, label: '10 AED Note', type: 'note' },
-                    { value: 5, label: '5 AED Note', type: 'note' },
-                    { value: 1, label: '1 AED Coin', type: 'coin' },
-                    { value: 0.50, label: '0.50 AED Coin', type: 'coin' },
-                    { value: 0.25, label: '0.25 AED Coin', type: 'coin' }
-                ]
-            },
-            EGP: {
-                symbol: 'ج.م',
-                name: 'EGP',
-                wordUnit: 'Pound',
-                wordUnits: 'Pounds',
-                wordSub: 'Piastre',
-                wordSubs: 'Piastres',
-                denoms: [
-                    { value: 200, label: '200 EGP Note', type: 'note' },
-                    { value: 100, label: '100 EGP Note', type: 'note' },
-                    { value: 50, label: '50 EGP Note', type: 'note' },
-                    { value: 20, label: '20 EGP Note', type: 'note' },
-                    { value: 10, label: '10 EGP Note', type: 'note' },
-                    { value: 5, label: '5 EGP Note', type: 'note' },
-                    { value: 1, label: '1 EGP Note/Coin', type: 'note' },
-                    { value: 0.50, label: '0.50 EGP Coin', type: 'coin' }
-                ]
-            },
-            KWD: {
-                symbol: 'د.ك',
-                name: 'KWD',
-                wordUnit: 'Dinar',
-                wordUnits: 'Dinars',
-                wordSub: 'Fils',
-                wordSubs: 'Fils',
-                denoms: [
-                    { value: 20, label: '20 KWD Note', type: 'note' },
-                    { value: 10, label: '10 KWD Note', type: 'note' },
-                    { value: 5, label: '5 KWD Note', type: 'note' },
-                    { value: 1, label: '1 KWD Note', type: 'note' },
-                    { value: 0.50, label: '1/2 KWD Note', type: 'note' },
-                    { value: 0.25, label: '1/4 KWD Note', type: 'note' },
-                    { value: 0.10, label: '100 Fils Coin', type: 'coin' },
-                    { value: 0.05, label: '50 Fils Coin', type: 'coin' }
-                ]
-            },
-            INR: {
-                symbol: '₹',
-                name: 'INR',
-                wordUnit: 'Rupee',
-                wordUnits: 'Rupees',
-                wordSub: 'Paisa',
-                wordSubs: 'Paise',
-                denoms: [
-                    { value: 500, label: '₹500 Note', type: 'note' },
-                    { value: 200, label: '₹200 Note', type: 'note' },
-                    { value: 100, label: '₹100 Note', type: 'note' },
-                    { value: 50, label: '₹50 Note', type: 'note' },
-                    { value: 20, label: '₹20 Note', type: 'note' },
-                    { value: 10, label: '₹10 Note', type: 'note' },
-                    { value: 5, label: '₹5 Coin/Note', type: 'coin' },
-                    { value: 2, label: '₹2 Coin', type: 'coin' },
-                    { value: 1, label: '₹1 Coin', type: 'coin' }
-                ]
-            }
-        };
+      calculateGrandTotal();
+    }
 
-        let currentCurrencyCode = 'USD';
-        let currentMode = 'count';
+    function calculateGrandTotal() {
+      const profile = currencyProfiles[activeCurrencyKey];
+      let grandTotal = 0;
+      let totalNotes = 0;
+      let totalCoins = 0;
 
-        function renderRows() {
-            const container = document.getElementById('denomRowsContainer');
-            container.innerHTML = '';
-            const currency = CURRENCIES[currentCurrencyCode];
+      profile.denominations.forEach((denom, idx) => {
+        const input = document.getElementById(`qty-input-${idx}`);
+        const qty = parseInt(input.value, 10) || 0;
+        const subtotal = Math.round(denom.value * qty * 100) / 100;
 
-            currency.denoms.forEach((d, idx) => {
-                const row = document.createElement('div');
-                row.className = 'denom-row';
-                row.innerHTML = `
-                    <label for="denom_input_${idx}" class="denom-badge">
-                        ${d.type === 'note' ? '💵' : '🪙'} ${d.label}
-                    </label>
-                    <div class="denom-input-wrap">
-                        <input type="number" 
-                               id="denom_input_${idx}" 
-                               class="denom-input" 
-                               aria-label="Quantity for ${d.label}"
-                               placeholder="0" 
-                               min="0" 
-                               step="1" 
-                               data-val="${d.value}" 
-                               data-type="${d.type}"
-                               oninput="recalculateTotals()">
-                    </div>
-                    <div class="denom-subtotal" id="denom_sub_${idx}" aria-label="Subtotal for ${d.label}">
-                        ${currency.symbol}0.00
-                    </div>
-                `;
-                container.appendChild(row);
-            });
-            recalculateTotals();
+        document.getElementById(`row-total-${idx}`).textContent = `${profile.symbol}${subtotal.toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}`;
+
+        grandTotal += subtotal;
+        if (denom.type === 'note') totalNotes += qty;
+        else totalCoins += qty;
+      });
+
+      grandTotal = Math.round(grandTotal * 100) / 100;
+
+      // Update Displays
+      document.getElementById('grand-total-display').textContent = `${profile.symbol}${grandTotal.toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}`;
+      document.getElementById('total-notes-count').textContent = totalNotes.toLocaleString();
+      document.getElementById('total-coins-count').textContent = totalCoins.toLocaleString();
+
+      // Opening Float Deduction
+      const floatInput = document.getElementById('float-input');
+      const floatVal = parseFloat(floatInput.value) || 0;
+      const netDeposit = Math.max(0, Math.round((grandTotal - floatVal) * 100) / 100);
+      document.getElementById('net-deposit-display').textContent = `${profile.symbol}${netDeposit.toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}`;
+
+      // Number to Words
+      document.getElementById('amount-words-display').textContent = convertCurrencyToEnglishWords(grandTotal, profile);
+    }
+
+    // Number to Words Engine for English Currency
+    const enUnits = ["", "One", "Two", "Three", "Four", "Five", "Six", "Seven", "Eight", "Nine"];
+    const enTeens = ["Ten", "Eleven", "Twelve", "Thirteen", "Fourteen", "Fifteen", "Sixteen", "Seventeen", "Eighteen", "Nineteen"];
+    const enTens = ["", "", "Twenty", "Thirty", "Forty", "Fifty", "Sixty", "Seventy", "Eighty", "Ninety"];
+    const enScales = ["", "Thousand", "Million", "Billion"];
+
+    function chunkToWords(n) {
+      let res = [];
+      const h = Math.floor(n / 100);
+      const rem = n % 100;
+      const t = Math.floor(rem / 10);
+      const u = rem % 10;
+
+      if (h > 0) res.push(enUnits[h] + " Hundred");
+      if (rem > 0) {
+        if (rem < 10) res.push(enUnits[rem]);
+        else if (rem >= 10 && rem <= 19) res.push(enTeens[rem - 10]);
+        else res.push(enTens[t] + (u > 0 ? "-" + enUnits[u] : ""));
+      }
+      return res.join(" and ");
+    }
+
+    function integerToWords(num) {
+      if (num === 0) return "Zero";
+      let n = Math.floor(num);
+      let chunks = [];
+      while (n > 0) {
+        chunks.push(n % 1000);
+        n = Math.floor(n / 1000);
+      }
+      let parts = [];
+      for (let i = chunks.length - 1; i >= 0; i--) {
+        const val = chunks[i];
+        if (val === 0) continue;
+        const text = chunkToWords(val);
+        const scale = enScales[i];
+        parts.push(scale ? text + " " + scale : text);
+      }
+      return parts.join(", ");
+    }
+
+    function convertCurrencyToEnglishWords(amount, profile) {
+      if (amount === 0) return `Zero ${profile.unitPlural} Only.`;
+      const parts = amount.toFixed(2).split('.');
+      const intPart = parseInt(parts[0], 10);
+      const decPart = parseInt(parts[1], 10);
+
+      let words = [];
+      if (intPart > 0) {
+        words.push(`${integerToWords(intPart)} ${intPart === 1 ? profile.unitSingle : profile.unitPlural}`);
+      }
+      if (decPart > 0) {
+        words.push(`${integerToWords(decPart)} ${decPart === 1 ? profile.fractionSingle : profile.fractionPlural}`);
+      }
+      return words.join(" and ") + " Only.";
+    }
+
+    function changeCurrency() {
+      activeCurrencyKey = document.getElementById('currency-select').value;
+      renderDenominationRows();
+      showToast(`Switched currency to ${currencyProfiles[activeCurrencyKey].name}`);
+    }
+
+    function clearAllInputs() {
+      const inputs = document.querySelectorAll('.qty-input');
+      inputs.forEach(input => input.value = "0");
+      document.getElementById('float-input').value = "0";
+      calculateGrandTotal();
+      showToast('All quantities reset to zero');
+    }
+
+    function copySummaryToClipboard() {
+      const profile = currencyProfiles[activeCurrencyKey];
+      const grandTotal = document.getElementById('grand-total-display').textContent;
+      const totalNotes = document.getElementById('total-notes-count').textContent;
+      const totalCoins = document.getElementById('total-coins-count').textContent;
+      const floatVal = document.getElementById('float-input').value || "0";
+      const netDeposit = document.getElementById('net-deposit-display').textContent;
+      const words = document.getElementById('amount-words-display').textContent;
+
+      let summary = `===============================\n`;
+      summary += `   CASH DENOMINATION SUMMARY   \n`;
+      summary += `===============================\n`;
+      summary += `Date: ${new Date().toLocaleDateString()} ${new Date().toLocaleTimeString()}\n`;
+      summary += `Currency: ${profile.name} (${profile.symbol})\n`;
+      summary += `-------------------------------\n`;
+      summary += `Grand Total:   ${grandTotal}\n`;
+      summary += `Less Float:    ${profile.symbol}${parseFloat(floatVal).toFixed(2)}\n`;
+      summary += `Net Deposit:   ${netDeposit}\n`;
+      summary += `Total Notes:   ${totalNotes}\n`;
+      summary += `Total Coins:   ${totalCoins}\n`;
+      summary += `In Words:      ${words}\n`;
+      summary += `-------------------------------\n`;
+      summary += `DENOMINATION BREAKDOWN:\n`;
+
+      profile.denominations.forEach((denom, idx) => {
+        const qty = parseInt(document.getElementById(`qty-input-${idx}`).value, 10) || 0;
+        if (qty > 0) {
+          const sub = (denom.value * qty).toFixed(2);
+          summary += `${denom.label.padEnd(12)} x ${String(qty).padStart(4)} = ${profile.symbol}${sub}\n`;
         }
+      });
+      summary += `===============================\n`;
 
-        function recalculateTotals() {
-            const currency = CURRENCIES[currentCurrencyCode];
-            let grandTotal = 0;
-            let totalNotes = 0;
-            let totalCoins = 0;
-            let activeDenoms = 0;
+      navigator.clipboard.writeText(summary).then(() => {
+        showToast('📋 Cash summary copied to clipboard!');
+      }).catch(() => {
+        showToast('Summary copied!');
+      });
+    }
 
-            currency.denoms.forEach((d, idx) => {
-                const input = document.getElementById(`denom_input_${idx}`);
-                const count = parseInt(input.value) || 0;
-                const subtotal = count * d.value;
+    function toggleFaqCard(header) {
+      header.parentElement.classList.toggle('open');
+    }
 
-                if (count > 0) {
-                    activeDenoms++;
-                    if (d.type === 'note') totalNotes += count;
-                    else totalCoins += count;
-                }
+    function showToast(msg) {
+      const toast = document.getElementById('toast');
+      toast.textContent = msg;
+      toast.classList.add('active');
+      setTimeout(() => {
+        toast.classList.remove('active');
+      }, 3000);
+    }
 
-                grandTotal += subtotal;
-                const subEl = document.getElementById(`denom_sub_${idx}`);
-                if (subEl) {
-                    subEl.innerText = `${currency.symbol}${subtotal.toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2 })}`;
-                }
-            });
-
-            updateDisplay(grandTotal, totalNotes, totalCoins, activeDenoms);
-        }
-
-        function updateDisplay(grandTotal, totalNotes, totalCoins, activeDenoms) {
-            const currency = CURRENCIES[currentCurrencyCode];
-            document.getElementById('grandTotalDisplay').innerText = `${currency.symbol}${grandTotal.toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2 })}`;
-            document.getElementById('totalNotesDisplay').innerText = totalNotes.toLocaleString();
-            document.getElementById('totalCoinsDisplay').innerText = totalCoins.toLocaleString();
-            document.getElementById('totalPiecesDisplay').innerText = (totalNotes + totalCoins).toLocaleString();
-            document.getElementById('activeDenomsDisplay').innerText = activeDenoms;
-            document.getElementById('amountInWordsDisplay').innerText = convertNumberToWords(grandTotal, currency);
-            document.getElementById('printTimestamp').innerText = `Generated on: ${new Date().toLocaleString()}`;
-        }
-
-        function changeCurrency() {
-            currentCurrencyCode = document.getElementById('currencySelect').value;
-            renderRows();
-            if (currentMode === 'breakdown') {
-                calculateBreakdown();
-            }
-        }
-
-        function resetCalculator() {
-            if (currentMode === 'count') {
-                const inputs = document.querySelectorAll('.denom-input');
-                inputs.forEach(i => i.value = '');
-                recalculateTotals();
-            } else {
-                document.getElementById('targetAmountInput').value = '';
-                document.getElementById('breakdownResultContainer').innerHTML = '';
-                updateDisplay(0, 0, 0, 0);
-            }
-        }
-
-        function switchMode(mode) {
-            currentMode = mode;
-            const tabCount = document.getElementById('tab-count');
-            const tabBreakdown = document.getElementById('tab-breakdown');
-            const panelCount = document.getElementById('panel-count');
-            const panelBreakdown = document.getElementById('panel-breakdown');
-
-            if (mode === 'count') {
-                tabCount.setAttribute('aria-selected', 'true');
-                tabBreakdown.setAttribute('aria-selected', 'false');
-                panelCount.style.display = 'block';
-                panelBreakdown.style.display = 'none';
-                recalculateTotals();
-            } else {
-                tabBreakdown.setAttribute('aria-selected', 'true');
-                tabCount.setAttribute('aria-selected', 'false');
-                panelCount.style.display = 'none';
-                panelBreakdown.style.display = 'block';
-                calculateBreakdown();
-            }
-        }
-
-        function calculateBreakdown() {
-            const rawVal = parseFloat(document.getElementById('targetAmountInput').value) || 0;
-            const container = document.getElementById('breakdownResultContainer');
-            container.innerHTML = '';
-
-            if (rawVal <= 0) {
-                updateDisplay(0, 0, 0, 0);
-                return;
-            }
-
-            const currency = CURRENCIES[currentCurrencyCode];
-            let remaining = Math.round(rawVal * 100) / 100;
-            let totalNotes = 0;
-            let totalCoins = 0;
-            let activeDenoms = 0;
-
-            currency.denoms.forEach((d) => {
-                const dVal = d.value;
-                const count = Math.floor(Math.round(remaining * 100) / Math.round(dVal * 100));
-                
-                if (count > 0) {
-                    activeDenoms++;
-                    if (d.type === 'note') totalNotes += count;
-                    else totalCoins += count;
-
-                    remaining = Math.round((remaining - (count * dVal)) * 100) / 100;
-
-                    const row = document.createElement('div');
-                    row.className = 'denom-row';
-                    row.innerHTML = `
-                        <div class="denom-badge">${d.type === 'note' ? '💵' : '🪙'} ${d.label}</div>
-                        <div style="text-align:center; font-weight:800; color:var(--primary); font-size:1.1rem;">
-                            × ${count} pieces
-                        </div>
-                        <div class="denom-subtotal">
-                            ${currency.symbol}${(count * dVal).toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2 })}
-                        </div>
-                    `;
-                    container.appendChild(row);
-                }
-            });
-
-            if (remaining > 0.001) {
-                const remainderRow = document.createElement('div');
-                remainderRow.style.padding = "10px";
-                remainderRow.style.color = "#b91c1c";
-                remainderRow.style.fontWeight = "700";
-                remainderRow.innerText = `Unrounded residual: ${currency.symbol}${remaining.toFixed(2)} (no smaller coin available)`;
-                container.appendChild(remainderRow);
-            }
-
-            updateDisplay(rawVal, totalNotes, totalCoins, activeDenoms);
-        }
-
-        function convertNumberToWords(amount, curr) {
-            if (!amount || amount === 0) return `Zero ${curr.wordUnits}`;
-
-            const a = ['', 'One', 'Two', 'Three', 'Four', 'Five', 'Six', 'Seven', 'Eight', 'Nine', 'Ten', 'Eleven', 'Twelve', 'Thirteen', 'Fourteen', 'Fifteen', 'Sixteen', 'Seventeen', 'Eighteen', 'Nineteen'];
-            const b = ['', '', 'Twenty', 'Thirty', 'Forty', 'Fifty', 'Sixty', 'Seventy', 'Eighty', 'Ninety'];
-
-            function toWords(num) {
-                if (num === 0) return '';
-                if (num < 20) return a[num] + ' ';
-                if (num < 100) return b[Math.floor(num / 10)] + (num % 10 !== 0 ? '-' + a[num % 10] : '') + ' ';
-                if (num < 1000) return a[Math.floor(num / 100)] + ' Hundred ' + toWords(num % 100);
-                if (num < 1000000) return toWords(Math.floor(num / 1000)) + ' Thousand ' + toWords(num % 1000);
-                if (num < 1000000000) return toWords(Math.floor(num / 1000000)) + ' Million ' + toWords(num % 1000000);
-                return toWords(Math.floor(num / 1000000000)) + ' Billion ' + toWords(num % 1000000000);
-            }
-
-            const whole = Math.floor(amount);
-            const fraction = Math.round((amount - whole) * 100);
-
-            let result = '';
-            if (whole > 0) {
-                result += toWords(whole).trim() + (whole === 1 ? ` ${curr.wordUnit}` : ` ${curr.wordUnits}`);
-            }
-            if (fraction > 0) {
-                result += (whole > 0 ? ' and ' : '') + toWords(fraction).trim() + (fraction === 1 ? ` ${curr.wordSub}` : ` ${curr.wordSubs}`);
-            }
-            return result.trim();
-        }
-
-        function exportToCSV() {
-            const currency = CURRENCIES[currentCurrencyCode];
-            let csvContent = "data:text/csv;charset=utf-8,";
-            csvContent += `Denomination,Quantity,Unit Value,Subtotal (${currency.name})\r\n`;
-
-            currency.denoms.forEach((d, idx) => {
-                let count = 0;
-                if (currentMode === 'count') {
-                    const input = document.getElementById(`denom_input_${idx}`);
-                    count = parseInt(input.value) || 0;
-                }
-                const subtotal = count * d.value;
-                if (count > 0 || currentMode === 'count') {
-                    csvContent += `"${d.label}",${count},${d.value},${subtotal.toFixed(2)}\r\n`;
-                }
-            });
-
-            const encodedUri = encodeURI(csvContent);
-            const link = document.createElement("a");
-            link.setAttribute("href", encodedUri);
-            link.setAttribute("download", `cash_audit_${currentCurrencyCode}_${new Date().toISOString().slice(0,10)}.csv`);
-            document.body.appendChild(link);
-            link.click();
-            document.body.removeChild(link);
-        }
-
-        function copySummaryText() {
-            const total = document.getElementById('grandTotalDisplay').innerText;
-            const words = document.getElementById('amountInWordsDisplay').innerText;
-            const pieces = document.getElementById('totalPiecesDisplay').innerText;
-            const textToCopy = `CASH AUDIT SUMMARY:\nGrand Total: ${total}\nTotal Physical Pieces: ${pieces}\nAmount In Words: ${words}\nDate: ${new Date().toLocaleString()}`;
-
-            navigator.clipboard.writeText(textToCopy).then(() => {
-                alert("Summary copied to clipboard!");
-            });
-        }
-
-        document.addEventListener('DOMContentLoaded', () => {
-            renderRows();
-        });
-    </script>
+    // Initial Render
+    renderDenominationRows();
+  </script>
 </body>
 </html>
