@@ -1,19 +1,33 @@
-# cash denomination calculator
+# Cash Denomination Calculator & Drawer Reconciler
 
-> Free, private, multi-currency cash denomination counter and bill-splitting tool for retail cashiers, bank tellers, and accounting teams.
+> A lightweight, client-side financial utility for retail cashiers, accountants, and bank tellers to tally banknote and coin denominations, deduct opening register floats, and generate audit slips in real-time.
 
-## Core Capabilities
-- **Mode 1: Cash Counter & Tally**: Real-time multiplication of banknote and coin quantities, calculating subtotals, physical piece counts, grand total, and legal text conversion (amount in words).
-- **Mode 2: Split Amount (Cash Breakdown)**: Greedy coin-change optimization algorithm that splits any entered target balance into the absolute minimum count of bills and coins for payroll envelopes and petty cash.
-- **Multi-Currency Support**: Pre-configured denomination presets for USD ($), EUR (€), GBP (£), SAR (ر.س), AED (د.إ), EGP (ج.م), KWD (د.ك), and INR (₹).
-- **Audit Slips & Export**: Instant export to CSV spreadsheet, one-click clipboard text copy, and print-ready formal bank deposit audit slips.
-- **Zero Data Logging**: 100% client-side computing inside browser memory; no numbers, tallies, or register amounts are stored or transmitted.
+## Project Overview
 
-## Primary Pages & Documentation
-- [/](https://yourdomain.com/): The main interactive cash denomination calculator and bill breakdown application.
-- [/about.html](https://yourdomain.com/about.html): Algorithmic specifications (Greedy vs Dynamic Programming), float sanitization methods, and end-of-day till reconciliation SOP.
-- [/privacy.html](https://yourdomain.com/privacy.html): Zero-knowledge privacy architecture, local storage policies, and audit data isolation guarantees.
+- **Canonical URL**: https://ahmedelazabdev.github.io/cashdenominationcalculator/
+- **Author**: Ahmed Elazab
+- **Primary Technology**: Native JavaScript (Client-side arithmetic, no external dependencies)
+- **Supported Currencies**: USD ($), EUR (€), GBP (£), EGP (E£), SAR (ر.س), AED (د.إ), INR (₹), CAD (C$), and AUD (A$).
 
-## Algorithmic Formulation
-- Direct Tally: `Total = SUM(Count_i * Denomination_i)`
-- Greedy Split: `Count_i = floor(Remaining_Balance / Denomination_i)`, iterated in descending face-value order.
+## Core Features & Financial Logic
+
+1. **Denomination-Specific Breakdown**:
+   - Real-time multiplication of physical bill and coin counts by circulating face values.
+   - Dynamic currency selector that swaps notes and coins according to official central bank issuance.
+
+2. **Opening Float & Net Deposit Calculation**:
+   - Separates starting base cash (the opening float) from gross drawer cash.
+   - Computes the exact net bank deposit amount to identify drawer overages and shortages against POS records.
+
+3. **Number-to-Words Generation**:
+   - Converts monetary figures into formal English words (e.g., "One Thousand, Four Hundred and Fifty Dollars and Twenty Cents Only") for checks, deposit slips, and receipt vouchers.
+
+4. **Reporting & Audit Tools**:
+   - One-click clipboard export formatting an itemized summary suitable for shift logs and emails.
+   - Dedicated print stylesheet (`@media print`) rendering clean, paper-ready cash drop slips with signature lines.
+
+## Technical Specifications
+
+- **Performance**: 100% Lighthouse score, zero external Google Fonts (using system font stack), zero Cumulative Layout Shift (CLS = 0.000).
+- **Privacy**: 100% client-side memory execution; no financial numbers, drawer balances, or currency tallies are transmitted to any server.
+- **Accessibility**: Full WCAG AAA color contrast compliance, sequentially descending heading hierarchy, and accessible form inputs.
